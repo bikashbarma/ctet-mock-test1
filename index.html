@@ -189,16 +189,39 @@ function submitToCentralScoreboard(r){
       headers:{"Content-Type":"text/plain;charset=UTF-8"},
       body,keepalive:true
     }).then(()=>{
-      if(status){status.textContent="CENTRAL SCOREBOARD: SUBMISSION SENT";status.style.color="var(--green)";}
+      if(status){
+        status.textContent="CENTRAL SCOREBOARD: SUBMISSION SENT";
+        status.style.color="var(--green)";
+      }
     }).catch(()=>{
-      try{navigator.sendBeacon(CENTRAL_SCOREBOARD_URL,new Blob([body],{type:"text/plain;charset=UTF-8"}));
-        if(status){status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";status.style.color="var(--green)";}
-      }catch(e){if(status){status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";status.style.color="var(--red)";}}
+      try{
+        if(navigator.sendBeacon){
+          navigator.sendBeacon(CENTRAL_SCOREBOARD_URL,new Blob([body],{type:"text/plain;charset=UTF-8"}));
+          if(status){
+            status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";
+            status.style.color="var(--green)";
+          }
+        }else if(status){
+          status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
+          status.style.color="var(--red)";
+        }
+      }catch(e){
+        if(status){
+          status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
+          status.style.color="var(--red)";
+        }
+      }
     });
   }catch(e){
-    try{navigator.sendBeacon(CENTRAL_SCOREBOARD_URL,new Blob([body],{type:"text/plain;charset=UTF-8"}));
-      if(status){status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";status.style.color="var(--green)";}
-    }catch(err){if(status){status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";status.style.color="var(--red)";}}
+    try{
+      if(navigator.sendBeacon){
+        navigator.sendBeacon(CENTRAL_SCOREBOARD_URL,new Blob([body],{type:"text/plain;charset=UTF-8"}));
+        if(status){
+          status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";
+          status.style.color="var(--green)";
+        }
+      }
+    }catch(err){}
     return Promise.resolve();
   }
 }
@@ -314,7 +337,7 @@ function startExam(){
 function tick(){
   const used=Math.floor((Date.now()-startAt)/1000),left=DURATION-used;
   $("timer").textContent=formatTime(left);$("timer").classList.toggle("warn",left<=300);
-  if(left<=0)submitExam();
+  if(left<=0 && !submitted)submitExam();
 }
 
 function submitExam(){
