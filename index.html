@@ -2,344 +2,422 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>CTET Mock Test 2026 — Set 1 | Central Scoreboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#000000">
+<title>CTET Mock Test 2026 — Paper I — Set 4 | Central Scoreboard</title>
 <style>
-:root{--bg:#000;--panel:#0b0b0b;--panel2:#111;--line:#242424;--text:#f4f4f4;--muted:#a5a5a5;--green:#16d96b;--red:#ff3152;--accent:#5c8dff;--gold:#ffd45a}
-body.light{--bg:#f5f7fb;--panel:#fff;--panel2:#f0f2f6;--line:#d8dce5;--text:#151922;--muted:#626a78;--accent:#315fce;--gold:#9a6500}
-body.light,body.light html{background:#f5f7fb;color:#151922}
-body.light .card,body.light .qcard,body.light .result-card,body.light .admin-card{background:#fff;border-color:#d8dce5;box-shadow:0 18px 50px rgba(0,0,0,.08)}
-body.light .top{background:rgba(255,255,255,.94)}
-body.light .timer,body.light .name,body.light .omr,body.light .review-row,body.light .stat,body.light .p{background:#f8f9fc;color:#151922;border-color:#d8dce5}
-body.light .bubble{background:#fff;color:#151922;border-color:#7d8491}
-body.light .bubble.selected{background:#151922;color:#fff;border-color:#151922}
-body.light .opt{background:#f8f9fc;color:#151922;border-color:#d8dce5}
-body.light .admin-tools button,body.light .result-actions button{background:#fff;color:#151922;border-color:#c4c9d3}
-body.light .primary,body.light .next{background:#151922;color:#fff}
-.themeBtn,.adminTopBtn{border:1px solid #555;background:#111;color:#fff;border-radius:10px;padding:9px 11px;font-weight:900}
-body.light .themeBtn,body.light .adminTopBtn{background:#fff;color:#151922;border-color:#c4c9d3}
-.topcontrols{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.adminTopBtn{background:#ffd45a;color:#000;border-color:#ffd45a}
-.omr.single{margin-top:18px;padding:12px 14px}
-.omr.single .omrtitle{margin-bottom:8px}
-.omr.single .bubbles{flex-wrap:nowrap;gap:9px;justify-content:center}
-.omr.single .bubble{width:48px;height:42px;padding:0}
-.omr-note{font-size:11px;color:var(--muted);text-align:center;margin-top:7px}
-.result-omr-compare{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.omr-sheet{border:1px solid var(--line);border-radius:16px;padding:14px;background:var(--panel2)}
-.omr-sheet h3{font-size:14px;margin-bottom:12px}
-.omr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.omr-cell{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:9px;padding:7px;font-size:12px}
-.omr-cell .mini{width:24px;height:24px;border:2px solid #777;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:10px}
-.omr-cell.marked .mini{background:#151922;color:#fff;border-color:#151922}
-.omr-cell.correct .mini{background:var(--green);color:#001b09;border-color:var(--green)}
-.omr-cell.wrong .mini{background:var(--red);color:#fff;border-color:var(--red)}
-.omr-cell.unanswered .mini{opacity:.45}
-.compare-legend{font-size:11px;color:var(--muted);margin-top:9px}
-@media(max-width:700px){.result-omr-compare{grid-template-columns:1fr}.omr-grid{grid-template-columns:repeat(2,1fr)}.topin{align-items:center}.topcontrols{justify-content:flex-end}.adminTopBtn,.themeBtn{font-size:11px;padding:8px}.omr.single .bubble{width:45px}}
-*{box-sizing:border-box}html,body{margin:0;background:#000;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-button,input{font:inherit}button{cursor:pointer}
-.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px}
-.card{width:min(620px,100%);background:linear-gradient(180deg,#101010,#080808);border:1px solid #292929;border-radius:24px;box-shadow:0 24px 80px #000;padding:30px}
-h1,h2,h3{margin:0}.brand{text-align:center;font-weight:900;letter-spacing:.14em}.sub{color:var(--muted);text-align:center;margin-top:8px}
-label{display:block;margin:28px 0 9px;font-weight:700}.name{width:100%;padding:16px;border-radius:14px;border:1px solid #343434;background:#050505;color:#fff;outline:none}.name:focus{border-color:var(--accent)}
-.primary{width:100%;border:0;border-radius:14px;padding:16px 20px;background:#fff;color:#000;font-weight:900;margin-top:12px}
+:root{--bg:#000;--panel:#090909;--panel2:#111;--line:#292929;--text:#fff;--muted:#aaa;--green:#18e76b;--red:#ff3152;--gold:#ffd45a;--blue:#5f8cff}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow:hidden}
+body.light{--bg:#f4f6fa;--panel:#fff;--panel2:#f1f3f7;--line:#d8dce5;--text:#111;--muted:#626a78;--gold:#8b5d00;--blue:#315fce}
+button,input{font:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
 .hidden{display:none!important}
-.exam{min-height:100vh;padding-bottom:30px}.top{position:sticky;top:0;z-index:10;background:rgba(0,0,0,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:12px 14px}
-.topin{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.testname{font-weight:900;font-size:14px}.timer{font-variant-numeric:tabular-nums;font-weight:1000;font-size:22px;border:1px solid #383838;border-radius:12px;padding:8px 12px;background:#0c0c0c}.timer.warn{color:#ffb13b;border-color:#8a5b12}
-.wrap{max-width:1100px;margin:0 auto;padding:20px 14px}.progress{color:var(--muted);font-size:13px;margin-bottom:12px}.qcard{background:#0b0b0b;border:1px solid var(--line);border-radius:20px;padding:20px}.qnum{color:var(--gold);font-weight:900;margin-bottom:12px}.question{font-size:20px;line-height:1.5;font-weight:750;white-space:pre-wrap}.options{display:grid;gap:10px;margin-top:20px}.opt{width:100%;text-align:left;border:1px solid #303030;background:#070707;color:#fff;border-radius:14px;padding:14px;display:flex;gap:12px;align-items:flex-start;transition:.15s}.opt:hover{border-color:#666}.opt.selected{border-color:var(--accent);background:#101a33}.opt.correct{border-color:var(--green);background:#092313}.opt.wrong{border-color:var(--red);background:#2a080f}.letter{font-weight:900;min-width:26px}.omr{margin-top:20px;border:1px solid #252525;border-radius:16px;padding:14px;background:#050505}.omrtitle{font-size:11px;letter-spacing:.12em;color:#aaa;font-weight:900;margin-bottom:10px}.bubbles{display:flex;gap:10px;flex-wrap:wrap}.bubble{width:54px;height:40px;border-radius:999px;border:1px solid #404040;background:#0b0b0b;color:#fff;font-weight:900}.bubble.selected{background:#fff;color:#000;border-color:#fff}.bubble.correct{background:var(--green);color:#001b09;border-color:var(--green)}.bubble.wrong{background:var(--red);border-color:var(--red);color:#fff}
-.actions{display:flex;justify-content:space-between;gap:12px;margin-top:16px}.next,.submit{border:0;border-radius:13px;padding:13px 18px;font-weight:900}.next{background:#fff;color:#000;margin-left:auto}.next:disabled{opacity:.35;cursor:not-allowed}.submit{background:#ffd45a;color:#000}
-.palette{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}.p{width:32px;height:32px;border:1px solid #333;border-radius:9px;background:#080808;color:#aaa;font-size:12px}.p.done{background:#163c24;color:#8cffb9;border-color:#236f3d}.p.current{outline:2px solid #fff}
-.result{min-height:100vh;padding:22px}.result-card{max-width:1050px;margin:auto;background:#0b0b0b;border:1px solid #292929;border-radius:24px;padding:24px}.result-title{text-align:center;font-weight:1000;letter-spacing:.08em}.candidate{text-align:center;color:#bbb;margin-top:8px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.stat{border:1px solid #292929;border-radius:15px;padding:15px;background:#060606}.stat small{display:block;color:#999}.stat strong{display:block;font-size:24px;margin-top:4px}.review{margin-top:22px;display:grid;gap:10px}.review-row{border:1px solid #292929;border-radius:14px;padding:14px;background:#070707}.review-q{font-weight:800}.review-a{margin-top:7px;color:#bbb}.tag{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:900}.tag.ok{background:#123e23;color:#6dffa5}.tag.bad{background:#450c17;color:#ff879a}.tag.skip{background:#2c2c2c;color:#bbb}.result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.result-actions button{border:1px solid #444;background:#111;color:#fff;border-radius:12px;padding:12px 15px;font-weight:800}
-.admin{min-height:100vh;padding:20px}.admin-card{max-width:1200px;margin:auto;background:#0b0b0b;border:1px solid #292929;border-radius:22px;padding:20px}.adminbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.admin-tools{display:flex;gap:8px;flex-wrap:wrap}.admin-tools button{border:1px solid #444;background:#111;color:#fff;border-radius:10px;padding:10px 12px;font-weight:800}.danger{border-color:#8c2033!important;color:#ff91a1!important}.tablewrap{overflow:auto;margin-top:16px}.tbl{width:100%;border-collapse:collapse;min-width:900px}.tbl th,.tbl td{padding:10px;border-bottom:1px solid #242424;text-align:left;white-space:nowrap}.tbl th{color:#aaa;font-size:12px}.empty{color:#888;padding:25px;text-align:center}
-#fx{position:fixed;inset:0;pointer-events:none;z-index:999}
-@media(max-width:700px){.card{padding:24px}.question{font-size:18px}.stats{grid-template-columns:repeat(2,1fr)}.topin{align-items:flex-start}.timer{font-size:19px}.bubble{width:50px}}
-
-.result-omr-compare{display:block}
-.result-omr-compare .omr-sheet{margin-top:18px}
-.result-omr-review{display:grid;gap:8px}
-.result-omr-row{display:grid;grid-template-columns:52px repeat(4,minmax(46px,1fr)) 46px 38px;gap:7px;align-items:center;border:1px solid var(--line);border-radius:11px;padding:7px;background:var(--panel)}
-.result-omr-row .rq{font-weight:900;font-size:12px}
-.result-omr-row .rb{height:38px;border:2px solid #666;border-radius:50%;background:transparent;color:var(--text);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px}
-.result-omr-row .rb.candidate{background:#151922;color:#fff;border-color:#151922}
-.result-omr-row .rb.official{border-color:var(--green);box-shadow:inset 0 0 0 2px var(--green);color:var(--green)}
-.result-omr-row .rb.candidate.official{background:var(--green);color:#001b09;border-color:var(--green);box-shadow:none}
-.result-omr-row .status{font-size:11px;font-weight:1000;text-align:center;line-height:1}
-.result-omr-row .status.ok{color:var(--green)}
-.result-omr-row .status.bad{color:var(--red);font-size:25px}
-.result-omr-row .status.skip{color:#999;font-size:18px}
-.omr-legend2{font-size:11px;color:var(--muted);margin-top:10px}
+.topbar{position:fixed;left:0;right:0;top:0;height:68px;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:8px 12px;background:rgba(0,0,0,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+body.light .topbar{background:rgba(255,255,255,.95)}
+.leftbox{justify-self:start}
+.rightbox{justify-self:end;display:flex;align-items:center;gap:8px}
+.centerbox{justify-self:center;text-align:center;min-width:100px}
+.themeBtn,.adminBtn,.correctBtn{border:1px solid #444;border-radius:11px;padding:9px 12px;background:#111;color:#fff;font-weight:1000;letter-spacing:.03em}
+body.light .themeBtn,body.light .adminBtn,body.light .correctBtn{background:#fff;color:#111;border-color:#c4c9d3}
+.adminBtn{background:var(--gold);color:#000;border-color:var(--gold)}
+.correctBtn{display:block;margin:auto;background:#0b301b;border-color:#1e9c52;color:#69ff9d;min-width:110px}
+.timer{margin-top:3px;font-variant-numeric:tabular-nums;font-size:18px;font-weight:1000;letter-spacing:.04em}
+.timer.warn{color:#ffb13b}
+.screen{position:fixed;inset:68px 0 0;display:flex;align-items:center;justify-content:center;padding:18px}
+.startCard{width:min(560px,92vw);background:linear-gradient(180deg,#101010,#070707);border:1px solid #2a2a2a;border-radius:24px;padding:30px;box-shadow:0 25px 90px rgba(0,0,0,.65)}
+body.light .startCard{background:#fff;border-color:#d8dce5;box-shadow:0 20px 60px rgba(0,0,0,.10)}
+.brand{margin:0;text-align:center;font-size:clamp(30px,6vw,46px);font-weight:1000;letter-spacing:.10em}
+label{display:block;margin:28px 0 9px;font-weight:1000;font-size:18px}
+.name{width:100%;height:56px;border:1px solid #3a3a3a;border-radius:14px;background:#050505;color:#fff;padding:0 16px;outline:none;font-weight:800;font-size:18px}
+body.light .name{background:#f8f9fc;color:#111;border-color:#cfd4de}
+.name:focus{border-color:var(--blue)}
+.startBtn{width:100%;height:58px;margin-top:12px;border:0;border-radius:14px;background:#fff;color:#000;font-weight:1000;font-size:18px;letter-spacing:.04em}
+.exam{position:fixed;inset:68px 0 0;height:calc(100dvh - 68px);padding:10px 12px}
+.examInner{height:100%;max-width:1100px;margin:auto;display:flex;flex-direction:column;min-height:0}
+.progress{height:28px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px;font-weight:900;padding:0 3px}
+.qcard{flex:1;min-height:0;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:clamp(14px,2.2vh,22px);display:flex;flex-direction:column;box-shadow:0 18px 70px rgba(0,0,0,.35)}
+.qnum{color:var(--gold);font-weight:1000;font-size:15px;margin-bottom:7px}
+.question{font-size:clamp(16px,2.3vh,21px);line-height:1.38;font-weight:800;max-width:1000px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:clamp(12px,2vh,18px)}
+.opt{min-height:54px;border:1px solid #333;border-radius:13px;background:var(--panel2);color:var(--text);padding:11px 13px;text-align:left;display:flex;gap:10px;align-items:flex-start;font-weight:750;line-height:1.28;font-size:clamp(14px,1.9vh,17px);transition:.12s}
+.opt:active{transform:scale(.995)}
+.opt.selected{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue) inset}
+.opt.correct{background:#0a321a;border-color:var(--green);color:#c9ffdc}
+.opt.wrong{background:#3a0811;border-color:var(--red);color:#ffd1d8}
+.letter{font-weight:1000;min-width:24px}
+.feedback{min-height:26px;margin-top:7px;font-size:13px;font-weight:1000}
+.feedback.ok{color:var(--green)} .feedback.bad{color:var(--red)}
+.actions{margin-top:auto;padding-top:9px;display:flex;justify-content:flex-end}
+.next{width:min(240px,100%);height:54px;border:0;border-radius:14px;background:#fff;color:#000;font-weight:1000;font-size:18px}
+.next:disabled{opacity:.35;cursor:not-allowed}
+.result,.admin{position:fixed;inset:68px 0 0;overflow:auto;padding:18px}
+.resultCard,.adminCard{width:min(1150px,100%);margin:auto;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px}
+.resultTitle{text-align:center;font-weight:1000;letter-spacing:.08em;margin:0}
+.candidate{text-align:center;color:var(--muted);font-weight:800;margin-top:7px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:18px}
+.stat{border:1px solid var(--line);background:var(--panel2);border-radius:14px;padding:13px}
+.stat small{display:block;color:var(--muted);font-weight:800}
+.stat strong{display:block;font-size:22px;margin-top:4px;font-weight:1000}
+.review{margin-top:20px;display:grid;gap:9px}
+.reviewRow{border:1px solid var(--line);border-radius:13px;padding:13px;background:var(--panel2)}
+.reviewQ{font-weight:900;line-height:1.35}
+.reviewA{margin-top:7px;color:var(--muted);font-size:14px;line-height:1.4}
+.tag{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:1000;margin-left:5px}
+.ok{background:#123e23;color:#70ff9f} .bad{background:#470b17;color:#ff91a4} .skip{background:#303030;color:#bbb}
+.resultActions,.adminTools{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.resultActions button,.adminTools button{border:1px solid #444;border-radius:11px;padding:11px 13px;background:#111;color:#fff;font-weight:900}
+body.light .resultActions button,body.light .adminTools button{background:#fff;color:#111;border-color:#c4c9d3}
+.danger{border-color:#9d253b!important;color:#ff91a4!important}
+.adminHead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.adminTitle{margin:0;font-weight:1000}
+.tableWrap{overflow:auto;margin-top:16px}
+table{width:100%;border-collapse:collapse;min-width:900px}
+th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{color:var(--muted);font-size:12px}
+.empty{padding:30px;text-align:center;color:var(--muted);font-weight:800}
+.status{margin-top:10px;text-align:center;font-size:12px;font-weight:1000}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1000}
 @media(max-width:700px){
- .result-omr-row{grid-template-columns:42px repeat(4,minmax(40px,1fr)) 40px 30px;gap:5px;padding:6px}
- .result-omr-row .rb{height:34px;font-size:12px}
- .result-omr-row .rq{font-size:11px}
- .result-omr-row .status.bad{font-size:21px}
+ .topbar{height:62px;padding:7px 8px}
+ .screen,.exam,.result,.admin{inset:62px 0 0}
+ .exam{height:calc(100dvh - 62px);padding:7px 8px}
+ .themeBtn,.adminBtn,.correctBtn{font-size:10px;padding:8px 8px;border-radius:9px}
+ .correctBtn{min-width:90px}
+ .timer{font-size:16px}
+ .startCard{padding:23px}
+ .options{grid-template-columns:1fr;gap:7px}
+ .opt{min-height:49px;padding:9px 11px}
+ .qcard{border-radius:16px;padding:13px}
+ .progress{height:24px;font-size:11px}
+ .next{height:52px;width:100%}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .result,.admin{padding:10px}
 }
-@media print{body{background:#fff;color:#000}.result-card{border:0}.result-actions{display:none}.review-row{break-inside:avoid}.result{padding:0}}
+@media(max-height:620px) and (orientation:landscape){
+ .question{font-size:15px;line-height:1.25}
+ .opt{min-height:42px;font-size:13px;padding:7px 9px}
+ .options{gap:6px;margin-top:7px}
+ .qcard{padding:10px}
+ .next{height:45px}
+}
+@media print{
+ html,body{overflow:visible;background:#fff!important;color:#000!important}
+ .topbar,.resultActions,.adminTools,#fx{display:none!important}
+ .result,.admin{position:static;overflow:visible;padding:0}
+ .resultCard,.adminCard{border:0;box-shadow:none}
+}
 </style>
 </head>
 <body>
 <canvas id="fx"></canvas>
 
+<header class="topbar">
+  <div class="leftbox"><button id="themeBtn" class="themeBtn" type="button">☀ THEME</button></div>
+  <div class="centerbox">
+    <button id="correctBtn" class="correctBtn" type="button">CORRECT: 0</button>
+    <div id="timer" class="timer">60:00</div>
+  </div>
+  <div class="rightbox"><button id="adminBtn" class="adminBtn" type="button">ADMIN PORTAL</button></div>
+</header>
+
 <section id="start" class="screen">
- <div class="card">
-  <h1 class="brand">MOCK TEST</h1>
-  <label for="candidate">Candidate Name</label>
-  <input id="candidate" class="name" autocomplete="name">
-  <button id="startBtn" class="primary">EXAM START</button>
- </div>
+  <div class="startCard">
+    <h1 class="brand">MOCK TEST</h1>
+    <label for="candidate">Candidate Name</label>
+    <input id="candidate" class="name" autocomplete="name" spellcheck="false">
+    <button id="startBtn" class="startBtn" type="button">EXAM START</button>
+  </div>
 </section>
 
 <section id="exam" class="exam hidden">
- <header class="top"><div class="topin">
-<div class="testname">CTET MOCK TEST — 2026 · SET 1</div>
-<div class="topcontrols">
-<button id="themeBtn" class="themeBtn" type="button">☀️ THEME</button>
-<button id="adminTopBtn" class="adminTopBtn" type="button">🔐 ADMIN PORTAL</button>
-<div id="timer" class="timer">60:00</div>
-</div></div></header>
- <main class="wrap">
-  <div id="progress" class="progress"></div>
-  <div id="qcard" class="qcard"></div>
-  <div id="palette" class="palette"></div>
- </main>
+  <div class="examInner">
+    <div class="progress"><span id="progress"></span><span id="sectionLabel"></span></div>
+    <div id="qcard" class="qcard"></div>
+  </div>
 </section>
 
 <section id="result" class="result hidden"></section>
 
 <section id="admin" class="admin hidden">
- <div class="admin-card">
-  <div class="adminbar">
-   <div><h2>ADMIN PORTAL</h2><div class="sub" style="text-align:left">Local results in this browser</div></div>
-   <div class="admin-tools">
-    <button id="refreshAdmin">REFRESH RESULTS</button>
-    <button id="csvAdmin">DOWNLOAD RESULTS CSV</button>
-    <button id="printAdmin">PRINT / SAVE PDF REPORT</button>
-    <button id="clearAdmin" class="danger">CLEAR ALL RESULTS</button>
-   </div>
+  <div class="adminCard">
+    <div class="adminHead">
+      <div><h2 class="adminTitle">ADMIN DASHBOARD</h2></div>
+      <div class="adminTools">
+        <button id="refreshAdmin">REFRESH RESULTS</button>
+        <button id="csvAdmin">DOWNLOAD RESULTS CSV</button>
+        <button id="printAdmin">PRINT / SAVE PDF REPORT</button>
+        <button id="clearAdmin" class="danger">CLEAR ALL RESULTS</button>
+      </div>
+    </div>
+    <div id="adminTable"></div>
   </div>
-  <div id="adminTable"></div>
- </div>
 </section>
 
 <script>
-const QUESTIONS = [{"id": 1, "text": "An increase of 5 cm in a child's height over one year is an example of:", "options": ["Development", "Growth", "Maturation only", "Learning"], "answer": "B"}, {"id": 2, "text": "Development proceeds from the head region towards the lower parts of the body. This is known as the:", "options": ["Cephalocaudal principle", "Principle of integration", "Principle of readiness", "Proximodistal principle"], "answer": "A"}, {"id": 3, "text": "A child fails to understand that the quantity of clay remains the same when its shape is changed. According to Piaget, this child is most likely in the:", "options": ["Concrete operational stage", "Formal operational stage", "Sensorimotor stage", "Preoperational stage"], "answer": "D"}, {"id": 4, "text": "The gap between what a child can achieve independently and what the child can achieve with the help of a more capable person is termed by Vygotsky as:", "options": ["Assimilation", "Scaffolding", "Zone of Proximal Development", "Equilibration"], "answer": "C"}, {"id": 5, "text": "A student obeys the classroom rules only because he fears being punished by the teacher. According to Kohlberg, this reflects:", "options": ["Post-conventional morality", "Conventional morality", "Pre-conventional morality", "Universal ethical reasoning"], "answer": "C"}, {"id": 6, "text": "According to Erikson, a primary-school-age child who repeatedly fails at tasks and is harshly criticised may develop a sense of:", "options": ["Shame and doubt", "Inferiority", "Role confusion", "Mistrust"], "answer": "B"}, {"id": 7, "text": "A student who shows an outstanding ability to understand and manage his own emotions, but is average in mathematics, demonstrates strength in which of Gardner's intelligences?", "options": ["Intrapersonal", "Naturalistic", "Logical-Mathematical", "Interpersonal"], "answer": "A"}, {"id": 8, "text": "A 9-year-old child (chronological age) performs at the mental level of an 11-year-old. The child's approximate IQ is:", "options": ["90", "82", "100", "122"], "answer": "D"}, {"id": 9, "text": "In an inclusive classroom, the school curriculum and teaching methods are modified to meet the needs of the child. This reflects:", "options": ["Special education", "Integrated education", "Inclusive education", "Segregated education"], "answer": "C"}, {"id": 10, "text": "A specific learning disability that primarily affects a child's reading ability, despite average intelligence, is called:", "options": ["Dysgraphia", "Dyslexia", "Aphasia", "Dyscalculia"], "answer": "B"}, {"id": 11, "text": "The \"Comprehensive\" dimension of Continuous and Comprehensive Evaluation (CCE) refers to the evaluation of:", "options": ["Only co-curricular activities", "Only a single annual examination", "Only academic subjects", "Both scholastic and co-scholastic areas"], "answer": "D"}, {"id": 12, "text": "Assessment conducted during the teaching-learning process to provide ongoing feedback for improvement is called:", "options": ["Norm-referenced assessment", "Summative assessment", "Diagnostic assessment", "Formative assessment"], "answer": "D"}, {"id": 13, "text": "Learning is best defined as a change in behaviour that is:", "options": ["Temporary and caused by fatigue", "Relatively permanent and results from experience", "Caused only by physical maturation", "Always identical to growth"], "answer": "B"}, {"id": 14, "text": "A teacher stops scolding a student the moment the student begins doing homework, and the student's homework habit improves. This is an example of:", "options": ["Negative reinforcement", "Positive punishment", "Negative punishment", "Positive reinforcement"], "answer": "A"}, {"id": 15, "text": "Piaget viewed a young child's habit of talking aloud while playing alone as a sign of:", "options": ["Language disorder", "Gender bias", "A valuable self-guidance tool", "Egocentrism, which fades with maturity"], "answer": "D"}, {"id": 16, "text": "According to Vygotsky, a child's habit of talking aloud while solving a problem eventually becomes internalised as:", "options": ["An overgeneralisation error", "Egocentric speech", "Inner speech", "A learning disability"], "answer": "C"}, {"id": 17, "text": "A teacher believes that \"girls are naturally better at languages than boys.\" This belief is an example of a:", "options": ["Gender role", "Gender identity", "Gender stereotype", "Gender-sensitive practice"], "answer": "C"}, {"id": 18, "text": "Which agent of socialisation becomes increasingly influential during late childhood and adolescence?", "options": ["Peer group", "Media alone", "School administration alone", "Family"], "answer": "A"}, {"id": 19, "text": "According to Goleman, the ability to recognise and manage one's own emotional responses is called:", "options": ["Social Skills", "Motivation", "Empathy", "Self-Regulation"], "answer": "D"}, {"id": 20, "text": "A teacher unconsciously gives more attention and challenging questions to students she believes are \"bright,\" and these students go on to perform better. This phenomenon is known as:", "options": ["Positive transfer", "Formative assessment", "The Pygmalion Effect", "Scaffolding"], "answer": "C"}, {"id": 21, "text": "In a child-centred classroom, the teacher's primary role is that of a:", "options": ["Sole transmitter of information", "Facilitator who guides learning", "Strict disciplinarian only", "Passive observer with no role"], "answer": "B"}, {"id": 22, "text": "Jerome Bruner's approach in which students explore materials and arrive at concepts on their own, with the teacher guiding rather than telling, is called:", "options": ["Rote Learning", "Deductive Teaching", "Classical Conditioning", "Discovery Learning"], "answer": "D"}, {"id": 23, "text": "Providing temporary support to a learner, which is gradually withdrawn as competence increases, is called:", "options": ["Accommodation", "Equilibration", "Assimilation", "Scaffolding"], "answer": "D"}, {"id": 24, "text": "A child with a borderline IQ (around 75-85) who learns slowly across most subjects but does not meet the criteria for intellectual disability is best described as a:", "options": ["Child with aphasia", "Gifted child", "Slow learner", "Child with dyscalculia"], "answer": "C"}, {"id": 25, "text": "According to Erikson, the psychosocial crisis of infancy (birth to about 18 months) is:", "options": ["Autonomy vs Shame and Doubt", "Trust vs Mistrust", "Initiative vs Guilt", "Industry vs Inferiority"], "answer": "B"}, {"id": 26, "text": "A student who studies purely to earn a reward promised by a parent is displaying:", "options": ["Extrinsic motivation", "Self-actualisation", "Cognitive dissonance", "Intrinsic motivation"], "answer": "A"}, {"id": 27, "text": "According to Miller, the capacity of short-term memory is approximately:", "options": ["20 ± 5 items", "Unlimited", "2 ± 1 items", "7 ± 2 items"], "answer": "D"}, {"id": 28, "text": "The Ebbinghaus Forgetting Curve shows that the rate of forgetting is:", "options": ["Unrelated to the passage of time", "Constant throughout the retention period", "Steepest immediately after learning and then gradually levels off", "Fastest several months after learning"], "answer": "C"}, {"id": 29, "text": "NEP 2020 restructures school education into which stage-wise pattern?", "options": ["10 + 2", "5 + 3 + 3 + 4", "8 + 4", "6 + 6"], "answer": "B"}, {"id": 30, "text": "When a teacher allows students to briefly discuss a difficult concept in their home language before answering in the language of instruction, she is treating multilingualism as a:", "options": ["Classroom resource", "Sign of a learning disability", "Reason for lower expectations", "Problem to be eliminated"], "answer": "A"}, {"id": 46, "text": "Which of the following is a RECEPTIVE and ORAL language skill?", "options": ["Speaking", "Listening", "Writing", "Reading"], "answer": "B"}, {"id": 47, "text": "According to Krashen, subconscious, natural language development similar to how a first language is learned is called:", "options": ["Language Acquisition", "Language Teaching", "Grammar Translation", "Language Learning"], "answer": "A"}, {"id": 48, "text": "Reading a passage quickly to get its general idea is called:", "options": ["Intensive reading", "Proof-reading", "Scanning", "Skimming"], "answer": "D"}, {"id": 49, "text": "Reading a timetable quickly to find one specific departure time is an example of:", "options": ["Reading aloud", "Skimming", "Scanning", "Silent reading for pleasure"], "answer": "C"}, {"id": 50, "text": "A child says \"I goed to school\" instead of \"I went to school.\" This is an example of:", "options": ["A random careless mistake", "Overgeneralisation, showing the child has grasped a grammar rule", "A speech disorder", "Aphasia"], "answer": "B"}, {"id": 51, "text": "An error that reflects a genuine, consistent gap in a learner's language competence is called a(n):", "options": ["Error", "Interlingual transfer only", "Fair test", "Mistake"], "answer": "A"}, {"id": 52, "text": "A Hindi-speaking learner of English says \"I am knowing the answer,\" reflecting a structure common in the learner's first language. This is an example of a(n):", "options": ["Random mistake", "Articulation disorder", "Intralingual error", "Interlingual error"], "answer": "D"}, {"id": 53, "text": "Which approach to language teaching prioritises meaningful, genuine communication over strict grammatical accuracy?", "options": ["Deductive drilling only", "Grammar-Translation Method", "Communicative Language Teaching", "Rote memorisation"], "answer": "C"}, {"id": 54, "text": "A teacher presents several example sentences and lets students discover the grammar rule themselves. This reflects the:", "options": ["Deductive approach", "Inductive approach", "Translation method", "Confirmation approach"], "answer": "B"}, {"id": 55, "text": "A reading approach that begins with decoding letters and sounds is called the:", "options": ["Phonics/Bottom-up approach", "Communicative approach", "Process approach", "Whole Language/Top-down approach"], "answer": "A"}, {"id": 56, "text": "The stage of the writing process in which a student produces an initial version of a piece of writing is called:", "options": ["Publishing", "Pre-writing/Planning", "Editing", "Drafting"], "answer": "D"}, {"id": 57, "text": "A speech fluency disorder involving involuntary repetitions, prolongations, or blocks in speech is called:", "options": ["An articulation disorder only", "Aphasia", "Stammering", "Dyslexia"], "answer": "C"}, {"id": 58, "text": "Allowing a multilingual student to draw on both their home language and English to make meaning in class is called:", "options": ["Suppression", "Translanguaging", "Grammar-Translation Method", "Rote learning"], "answer": "B"}, {"id": 59, "text": "Remedial teaching in language classes should ideally begin with:", "options": ["Diagnostic assessment to identify the specific difficulty", "Ignoring the learner's specific need", "Punishing the learner for the error", "Repeating the same failed lesson at the same pace"], "answer": "A"}, {"id": 60, "text": "When teaching a poem to young learners, which of the following should generally come FIRST?", "options": ["A written examination on the poem", "Silent analytical reading only, with no vocalisation", "Detailed grammatical analysis of every line", "Reading the poem aloud and enjoying its sound and rhythm"], "answer": "D"}, {"id": 61, "text": "The place value of 7 in the number 47,296 is:", "options": ["7", "70", "7,000", "700"], "answer": "C"}, {"id": 62, "text": "What is the sum of 3,847 and 2,956?", "options": ["6,803", "6,793", "6,893", "6,703"], "answer": "A"}, {"id": 63, "text": "What is the product of 34 and 12?", "options": ["418", "384", "396", "408"], "answer": "D"}, {"id": 64, "text": "Divide 144 by 12. The quotient is:", "options": ["13", "10", "11", "12"], "answer": "D"}, {"id": 65, "text": "Which of the following fractions is equivalent to 1/2?", "options": ["2/5", "3/8", "4/8", "5/9"], "answer": "C"}, {"id": 66, "text": "Arrange in ascending order: 3/4, 1/2, 5/8", "options": ["3/4, 5/8, 1/2", "5/8, 1/2, 3/4", "1/2, 3/4, 5/8", "1/2, 5/8, 3/4"], "answer": "D"}, {"id": 67, "text": "What is 0.25 expressed as a fraction in its simplest form?", "options": ["2/5", "1/25", "1/4", "1/5"], "answer": "C"}, {"id": 68, "text": "A shape with four equal sides and four right angles is called a:", "options": ["Trapezium", "Rectangle", "Rhombus", "Square"], "answer": "D"}, {"id": 69, "text": "How many faces does a cube have?", "options": ["4", "6", "8", "12"], "answer": "B"}, {"id": 70, "text": "The sum of the angles of a triangle is always:", "options": ["180°", "270°", "360°", "90°"], "answer": "A"}, {"id": 71, "text": "1 kilometre is equal to:", "options": ["10,000 metres", "10 metres", "100 metres", "1,000 metres"], "answer": "D"}, {"id": 72, "text": "1 litre is equal to how many millilitres?", "options": ["10,000", "10", "100", "1,000"], "answer": "D"}, {"id": 73, "text": "If a train leaves at 9:45 am and reaches its destination at 12:15 pm, the total travel time is:", "options": ["2 hours 15 minutes", "2 hours 30 minutes", "3 hours", "2 hours 45 minutes"], "answer": "B"}, {"id": 74, "text": "What comes next in the pattern: 2, 4, 8, 16, __?", "options": ["20", "24", "32", "18"], "answer": "C"}, {"id": 75, "text": "A survey of 20 students' favourite fruits is best represented for young learners using a:", "options": ["Complex line graph", "Scatter plot", "Pie chart with percentages", "Pictograph"], "answer": "D"}, {"id": 76, "text": "The perimeter of a rectangle with length 8 cm and breadth 5 cm is:", "options": ["20 cm", "13 cm", "26 cm", "40 cm"], "answer": "C"}, {"id": 77, "text": "The area of a square with side 6 cm is:", "options": ["12 sq cm", "24 sq cm", "36 sq cm", "18 sq cm"], "answer": "C"}, {"id": 78, "text": "Which of the following numbers is a prime number?", "options": ["27", "29", "33", "21"], "answer": "B"}, {"id": 79, "text": "The smallest three-digit number is:", "options": ["101", "999", "099", "100"], "answer": "D"}, {"id": 80, "text": "Round off 4,567 to the nearest hundred:", "options": ["4,000", "4,500", "4,600", "4,570"], "answer": "C"}, {"id": 81, "text": "The nature of mathematics is best described as being:", "options": ["Only a fixed body of facts, unrelated to reasoning", "Both a body of knowledge (product) and a way of thinking (process)", "Entirely subjective with no logical structure", "Unrelated to real life"], "answer": "B"}, {"id": 82, "text": "According to NCF, the central goal of school mathematics is often described as the:", "options": ["Mathematisation of the child's thinking", "Memorisation of formulas only", "Preparation for competitive exams alone", "Elimination of all errors"], "answer": "A"}, {"id": 83, "text": "George Pólya's FIRST step in problem-solving is to:", "options": ["Carry out the plan", "Look back", "Devise a plan", "Understand the problem"], "answer": "D"}, {"id": 84, "text": "A problem that can be solved by directly applying a previously taught procedure is called a:", "options": ["Operational definition", "Non-routine problem", "Routine problem", "Fair test"], "answer": "C"}, {"id": 85, "text": "The recommended developmental sequence for introducing a new mathematical concept is:", "options": ["Abstract → Pictorial → Concrete", "Concrete → Pictorial → Abstract", "Pictorial → Abstract → Concrete", "Abstract only, at all stages"], "answer": "B"}, {"id": 86, "text": "A student writes 1/2 + 1/3 = 2/5 by adding numerators and denominators separately. This error is best classified as a:", "options": ["Conceptual error", "A correct answer", "An assessment tool", "Careless/slip error"], "answer": "A"}, {"id": 87, "text": "A student who understands the concept of long division but makes a mistake while carrying out the steps has made a:", "options": ["A correct calculation", "An overgeneralisation of a fact he does not know", "Conceptual error", "Procedural error"], "answer": "D"}, {"id": 88, "text": "The primary purpose of a Mathematics Laboratory is to support:", "options": ["Elimination of all hands-on activity", "Only summative testing", "Verification of concepts and exploration of new relationships", "Only rote memorisation of tables"], "answer": "C"}, {"id": 89, "text": "Assessment in mathematics should ideally focus on:", "options": ["Only the correctness of the final numerical answer", "Genuine reasoning and conceptual understanding, not the final answer alone", "Only speed of calculation", "Only neatness of handwriting"], "answer": "B"}, {"id": 90, "text": "A student with dyscalculia is allowed to use a multiplication chart during a problem-solving task. This accommodation primarily helps the assessment measure:", "options": ["Higher-level reasoning ability, separate from rote fact recall", "Nothing useful", "Only memory for multiplication tables", "Handwriting speed"], "answer": "A"}, {"id": 91, "text": "Which part of a plant absorbs water and minerals from the soil?", "options": ["Leaf", "Stem", "Root", "Flower"], "answer": "C"}, {"id": 92, "text": "The process by which green plants prepare their own food using sunlight is called:", "options": ["Photosynthesis", "Transpiration", "Digestion", "Respiration"], "answer": "A"}, {"id": 93, "text": "Which of the following animals is a mammal, despite living in water?", "options": ["Starfish", "Octopus", "Shark", "Whale"], "answer": "D"}, {"id": 94, "text": "Migratory birds generally travel to a different region mainly in search of:", "options": ["Bigger trees to build nests", "Fresh water and favourable climate/food", "New nesting materials only", "A quieter environment only"], "answer": "B"}, {"id": 95, "text": "Which of the following is a non-renewable source of energy?", "options": ["Sunlight", "Wind", "Coal", "Water"], "answer": "C"}, {"id": 96, "text": "The process by which water changes from liquid to vapour due to heat is called:", "options": ["Evaporation", "Precipitation", "Freezing", "Condensation"], "answer": "A"}, {"id": 97, "text": "Which of the following is the largest state of India by area?", "options": ["Madhya Pradesh", "Maharashtra", "Uttar Pradesh", "Rajasthan"], "answer": "D"}, {"id": 98, "text": "A thermometer is an instrument used to measure:", "options": ["Time", "Weight", "Length", "Temperature"], "answer": "D"}, {"id": 99, "text": "Which of the following food items is a good source of protein?", "options": ["Rice", "Pulses/lentils", "Sugar", "Oil"], "answer": "B"}, {"id": 100, "text": "The sense organ used for detecting smell is the:", "options": ["Ear", "Nose", "Tongue", "Eye"], "answer": "B"}, {"id": 101, "text": "A house built on stilts (raised platforms) is most commonly found in areas prone to:", "options": ["Extreme cold only", "Drought", "Earthquakes only", "Floods"], "answer": "D"}, {"id": 102, "text": "Which of the following is an example of a means of communication, not a means of transport?", "options": ["Train", "Bicycle", "Telephone", "Bus"], "answer": "C"}, {"id": 103, "text": "The waste that can be broken down naturally by micro-organisms is called:", "options": ["Biodegradable waste", "Non-biodegradable waste", "Hazardous waste only", "E-waste only"], "answer": "A"}, {"id": 104, "text": "Which of the following is true about most microorganisms?", "options": ["Many microorganisms are beneficial, such as those used to make curd", "Microorganisms have no role in nature", "Microorganisms cannot be seen even under a microscope", "All microorganisms are harmful"], "answer": "A"}, {"id": 105, "text": "The main organ responsible for pumping blood throughout the human body is the:", "options": ["Kidney", "Liver", "Lungs", "Heart"], "answer": "D"}, {"id": 106, "text": "Which of the following best distinguishes weather from climate?", "options": ["Climate changes every few hours; weather does not change", "Weather and climate mean exactly the same thing", "Weather is short-term/day-to-day; climate is the long-term average pattern", "Weather refers only to temperature; climate refers only to rainfall"], "answer": "C"}, {"id": 107, "text": "A desert region is generally characterised by:", "options": ["Heavy rainfall and dense forests", "Very low rainfall and extreme temperatures", "Constant snowfall throughout the year", "High humidity and swampy land"], "answer": "B"}, {"id": 108, "text": "The main function of the roots of a plant, besides absorbing water, is to:", "options": ["Anchor/hold the plant firmly in the soil", "Attract pollinating insects", "Store all the plant's chlorophyll", "Prepare food through photosynthesis"], "answer": "A"}, {"id": 109, "text": "Which of the following correctly completes the food chain: Grass → Grasshopper → __?", "options": ["Elephant", "Tree", "Frog", "Lion"], "answer": "C"}, {"id": 110, "text": "The layer of gases surrounding the Earth that we breathe is called the:", "options": ["Biosphere", "Hydrosphere", "Atmosphere", "Lithosphere"], "answer": "C"}, {"id": 111, "text": "EVS at the primary level is best described as:", "options": ["A simple combination of separate Science and Social Studies chapters", "A genuinely integrated subject drawing on the child's own experience", "A subject unrelated to a child's daily life", "Only a Science subject"], "answer": "B"}, {"id": 112, "text": "According to NCF's Position Paper, EVS content should ideally be organised around:", "options": ["Life-connected themes such as Food, Water, and Shelter", "Only laboratory-based experiments", "Only map-reading skills", "Strict disciplinary chapters (Physics, Chemistry, History)"], "answer": "A"}, {"id": 113, "text": "A statement such as \"the leaf is green\" is best classified as a(n):", "options": ["Misconception", "Field visit stage", "Inference", "Observation"], "answer": "D"}, {"id": 114, "text": "A statement such as \"the plant looks unhealthy because its leaves are yellow\" is best classified as a(n):", "options": ["A theme", "Observation only", "Inference", "A field visit"], "answer": "C"}, {"id": 115, "text": "The stage of an effective field visit in which the teacher briefs students on what to observe is called:", "options": ["The visit itself", "Post-visit follow-up", "Pre-visit preparation", "Summative assessment"], "answer": "C"}, {"id": 116, "text": "Environmental awareness includes which of the following dimensions?", "options": ["Knowledge, sensitivity, attitude, skills, and participation", "Only test scores", "Only memorised definitions", "Only factual knowledge"], "answer": "A"}, {"id": 117, "text": "A teacher gives students potted seeds and has them observe and record growth weekly. This activity best reflects:", "options": ["A misconception", "A summative test", "Passive, lecture-based teaching", "Activity-based EVS learning"], "answer": "D"}, {"id": 118, "text": "A child believes that \"all insects are harmful and should be killed.\" This belief is best described as a(n):", "options": ["An observation", "Accurate scientific fact", "Common misconception/alternative conception", "A field visit stage"], "answer": "C"}, {"id": 119, "text": "The most effective way to correct a firmly held misconception is generally to:", "options": ["Simply restate the correct fact once", "Create cognitive conflict through evidence-based, hands-on investigation", "Ignore the misconception entirely", "Punish the student for holding the belief"], "answer": "B"}, {"id": 120, "text": "EVS assessment should ideally capture:", "options": ["Process skills, application, and attitudes, in addition to factual knowledge", "Only attendance at field visits", "Only handwriting quality", "Only factual recall through a single written test"], "answer": "A"}];
-const DURATION = 60*60;
-const ADMIN_PASSWORD = "Bikash@420";
-const RESULTS_KEY = "ctet_mock_2026_set1_results_v1";
+const QUESTIONS=[{"orig":1,"text":"A delay in a child's language development is often found to also affect the child's social interactions with peers. This best illustrates which characteristic of development?","options":["Development is holistic; all domains are interconnected","Development is identical in every child","Development stops after adolescence","Development is unrelated to any domain interaction"],"id":1,"answer":"A"},{"orig":2,"text":"Two children of the same age reach the same developmental milestones at different times, even though the overall pattern of development is the same for both. This illustrates:","options":["Individual differences in the rate/pace of development","A developmental disorder in one of the children","Growth, not development","Predictable pattern only, with no individual variation"],"id":2,"answer":"A"},{"orig":3,"text":"A child who already has a schema for \"dog\" encounters a cat for the first time and creates an entirely new schema for it. According to Piaget, this process is called:","options":["Equilibration only","Object permanence","Assimilation","Accommodation"],"id":3,"answer":"D"},{"orig":4,"text":"A teacher notices that a student cannot yet solve a two-step word problem alone but can solve it successfully with a few guiding questions from the teacher. This gap is best described using Vygotsky's concept of:","options":["Object permanence","Equilibration","The Zone of Proximal Development","Conservation"],"id":4,"answer":"C"},{"orig":5,"text":"A person argues that an unjust law should be changed because it violates a broader principle of human dignity, even though the law is not yet officially amended. According to Kohlberg, this reflects:","options":["Stage 1: Obedience and Punishment","Stage 3: Good Interpersonal Relationships","Stage 5: Social Contract and Individual Rights","Stage 4: Maintaining Social Order only"],"id":5,"answer":"C"},{"orig":6,"text":"According to Erikson, an elderly person who looks back on their life with a sense of satisfaction and acceptance has successfully resolved the crisis of:","options":["Integrity vs Despair","Intimacy vs Isolation","Industry vs Inferiority","Generativity vs Stagnation"],"id":6,"answer":"A"},{"orig":7,"text":"J. P. Guilford's Structure of Intellect model is best known in CTET syllabi for introducing which important distinction?","options":["Assimilation vs accommodation","Formative vs summative assessment","Growth vs development","Convergent thinking vs divergent thinking"],"id":7,"answer":"D"},{"orig":8,"text":"A student who has an unusually strong vocabulary and expresses ideas with exceptional clarity in both speech and writing shows particular strength in which of Gardner's intelligences?","options":["Naturalistic","Logical-Mathematical","Linguistic","Spatial"],"id":8,"answer":"C"},{"orig":9,"text":"A test designed to predict how well a student is likely to learn a new skill, such as music, with training is best described as a test of:","options":["Achievement","Aptitude","Personality","Temperament"],"id":9,"answer":"B"},{"orig":10,"text":"A student has high aptitude for mathematics but shows very little interest in mathematics-related activities, preferring art instead. This illustrates the distinction between:","options":["Personality and temperament","Intelligence and IQ","Growth and development","Aptitude and interest"],"id":10,"answer":"D"},{"orig":11,"text":"The Big Five personality traits are commonly remembered using the acronym OCEAN, which includes Openness, Conscientiousness, Extraversion, Agreeableness, and:","options":["Narcissism","Nurturance","Neuroticism","Naturalism"],"id":11,"answer":"C"},{"orig":12,"text":"According to Thomas and Chess, a child with a generally positive mood, regular routines, and who adapts easily to new situations is classified as a(n):","options":["Gifted child","Difficult child","Easy child","Slow-to-warm-up child"],"id":12,"answer":"C"},{"orig":13,"text":"A student who learns best through diagrams, charts, and written material, rather than through listening or hands-on activity, has a preference for which learning style?","options":["Auditory","Visual","Kinesthetic","Convergent"],"id":13,"answer":"B"},{"orig":14,"text":"A student shows persistent difficulty sustaining attention, is easily distracted, and frequently acts impulsively, beyond what is typical for their age. This profile is most consistent with characteristics associated with:","options":["Attention-Deficit/Hyperactivity Disorder (ADHD)","Dyscalculia","Selective mutism","Autism Spectrum Disorder"],"id":14,"answer":"A"},{"orig":15,"text":"A student shows differences in social communication, strongly prefers a fixed daily routine, and becomes distressed by sudden changes. This profile is most consistent with characteristics associated with:","options":["Dysgraphia","Aphasia","ADHD","Autism Spectrum Disorder"],"id":15,"answer":"D"},{"orig":16,"text":"The removal of physical, attitudinal, curricular, and communication obstacles that prevent children with disabilities from fully participating in education is called:","options":["Remedial teaching only","Special education","Barrier-free education","Segregated education"],"id":16,"answer":"C"},{"orig":17,"text":"Assessment in which a student actively monitors and reflects on their own learning progress is called:","options":["Assessment for learning","Assessment of learning","Assessment as learning","Diagnostic assessment only"],"id":17,"answer":"C"},{"orig":18,"text":"A scoring guide that defines specific criteria and descriptive performance levels for evaluating a piece of student work is called a:","options":["Rubric","Anecdotal record","Portfolio","Checklist"],"id":18,"answer":"A"},{"orig":19,"text":"Which of the following tools measures the DEGREE or FREQUENCY of a student behaviour, rather than simply its presence or absence?","options":["Anecdotal record only","A single test score","Checklist","Rating scale"],"id":19,"answer":"D"},{"orig":20,"text":"Reinforcing a desired behaviour every single time it occurs is called:","options":["Extinction","Partial reinforcement","Continuous reinforcement","Negative punishment"],"id":20,"answer":"C"},{"orig":21,"text":"A student who has learned to ride a bicycle finds it easier to later learn how to ride a scooter. This illustrates:","options":["Negative transfer of learning","Positive transfer of learning","Zero transfer of learning","Retroactive interference"],"id":21,"answer":"B"},{"orig":22,"text":"A student who is used to driving on one side of the road finds it initially difficult to adapt to driving on the opposite side in another country. This illustrates:","options":["Negative transfer of learning","Zero transfer of learning","Proactive interference only","Positive transfer of learning"],"id":22,"answer":"A"},{"orig":23,"text":"According to Maslow's hierarchy, which of the following needs must generally be satisfied FIRST, before higher-level needs like self-actualisation can be fully pursued?","options":["Love and belonging needs","Aesthetic needs","Esteem needs","Physiological needs"],"id":23,"answer":"D"},{"orig":24,"text":"Which of the following is generally considered a characteristic of an effective teacher?","options":["Treating all students identically regardless of individual differences","Rigid adherence to a single teaching method regardless of learner needs","Warmth combined with high, consistent expectations for all students","Avoiding any reflection on one's own teaching practice"],"id":24,"answer":"C"},{"orig":25,"text":"A teacher's facial expressions, tone of voice, and body language, which can reinforce or contradict the spoken message, are examples of:","options":["Written communication","Non-verbal communication","Formal assessment","A rubric"],"id":25,"answer":"B"},{"orig":26,"text":"NCF's approach to school education emphasises moving away from rote learning towards:","options":["Constructivist, activity-based, meaningful learning","Only textbook-based lecture","Elimination of all assessment","Only standardised testing"],"id":26,"answer":"A"},{"orig":27,"text":"The growing capacity to manage and appropriately express the intensity of one's feelings is called:","options":["Emotional intelligence testing","Attachment","Emotional expression only","Emotional regulation"],"id":27,"answer":"D"},{"orig":28,"text":"A child combines two words to convey a simple message, such as \"mummy go,\" during early language development. This is characteristic of the:","options":["Formal grammar stage","One-word (holophrastic) stage","Two-word (telegraphic) stage","Babbling stage"],"id":28,"answer":"C"},{"orig":29,"text":"Which of the following is considered a modern agent of socialisation, alongside family, school, community, and peer group?","options":["Genetics","Media","Maturation","Reflex actions"],"id":29,"answer":"B"},{"orig":30,"text":"A teacher appropriately limits discussion of a student's personal disclosure to only those professionals with a legitimate need to know, rather than sharing it widely. This reflects the professional ethics principle of:","options":["Confidentiality","Non-discrimination","Reflective practice","Fairness"],"id":30,"answer":"A"},{"orig":46,"text":"Speaking is best classified as which type of language skill?","options":["Receptive and written","Productive and oral","Receptive and oral","Productive and written"],"id":31,"answer":"B"},{"orig":47,"text":"According to Krashen's Input Hypothesis, language acquisition occurs most effectively through:","options":["Comprehensible input slightly beyond the learner's current level (i+1)","Repeated punishment for errors","Avoiding all listening practice","Explicit grammar instruction alone"],"id":32,"answer":"A"},{"orig":48,"text":"The ability to connect sentences and ideas coherently to produce a unified spoken or written text is called:","options":["Strategic competence","Sociolinguistic competence","Grammatical competence","Discourse competence"],"id":33,"answer":"D"},{"orig":49,"text":"A teacher explains the rule for forming comparative adjectives first, then has students complete practice exercises applying the rule. This reflects the:","options":["Whole language approach","Inductive approach","Deductive approach","Communicative approach only"],"id":34,"answer":"C"},{"orig":50,"text":"A reading approach that begins with meaning and context, using prediction and prior knowledge to make sense of a text, is called the:","options":["Phonics/Bottom-up approach","Whole Language/Top-down approach","Grammar-Translation approach","Confirmation approach"],"id":35,"answer":"B"},{"orig":51,"text":"The stage of the writing process in which a student corrects grammar, spelling, and punctuation in a near-final draft is called:","options":["Revising","Editing","Pre-writing","Drafting"],"id":36,"answer":"B"},{"orig":52,"text":"Knowledge of vocabulary, sentence structure, and pronunciation rules is called:","options":["Strategic competence","Discourse competence","Sociolinguistic competence","Grammatical competence"],"id":37,"answer":"D"},{"orig":53,"text":"A reading approach that begins with decoding individual letters and sounds, building up to whole-word recognition, is called the:","options":["Process approach","Whole Language approach","Phonics/Bottom-up approach","Communicative approach"],"id":38,"answer":"C"},{"orig":54,"text":"A Hindi-speaking learner of English says \"She is having two brothers,\" reflecting a structure common in the learner's home language. This is an example of a(n):","options":["Intralingual error","Interlingual error","Random mistake","Fair test"],"id":39,"answer":"B"},{"orig":55,"text":"A learner says \"I have two mouses\" instead of \"I have two mice,\" applying the regular plural rule to an irregular word. This is an example of a(n):","options":["Intralingual error (overgeneralisation)","Random mistake","Aphasia","Interlingual error"],"id":40,"answer":"A"},{"orig":56,"text":"When teaching poetry, reading the poem ALOUD with appropriate rhythm and expression is considered:","options":["Only useful for very advanced learners","Irrelevant to comprehension","Unnecessary and old-fashioned","Essential, since rhythm and sound are central to a poem's meaning and effect"],"id":41,"answer":"D"},{"orig":57,"text":"Real objects used as teaching materials to make language concrete for young learners are called:","options":["Operational definitions","Realia","Rubrics","Portfolios"],"id":42,"answer":"B"},{"orig":58,"text":"For a young learner struggling with letter-sound correspondence, an appropriate remedial strategy would be:","options":["Skipping phonics entirely and moving straight to complex texts","Structured, multisensory phonics instruction connecting sounds to letters systematically","Ignoring the difficulty since it will resolve on its own","Only silent reading with no explicit instruction"],"id":43,"answer":"B"},{"orig":59,"text":"The Communicative Approach to language teaching primarily prioritises:","options":["Meaningful, genuine communication and fluency","Rote memorisation of isolated vocabulary lists","Silent, individual written drills only","Grammatical perfection over meaning"],"id":44,"answer":"A"},{"orig":60,"text":"A teacher uses a rubric addressing content, organisation, grammar, and vocabulary to assess a student's short story. This reflects:","options":["A purely oral assessment method","An approach unrelated to writing quality","Assessment based only on grammatical accuracy","A comprehensive, multi-criterion approach to assessing writing"],"id":45,"answer":"D"},{"orig":61,"text":"The place value of 6 in the number 26,485 is:","options":["6","60","600","6,000"],"id":46,"answer":"D"},{"orig":62,"text":"What is the sum of 14,562 and 8,379?","options":["22,941","23,941","21,941","22,841"],"id":47,"answer":"A"},{"orig":63,"text":"What is the difference between 15,000 and 8,647?","options":["7,353","6,343","6,353","6,453"],"id":48,"answer":"C"},{"orig":64,"text":"What is the product of 19 and 16?","options":["324","294","304","314"],"id":49,"answer":"C"},{"orig":65,"text":"Divide 216 by 18. The quotient is:","options":["10","11","12","13"],"id":50,"answer":"C"},{"orig":66,"text":"What is the sum of 1/4 and 1/8?","options":["3/8","1/2","2/8","2/12"],"id":51,"answer":"A"},{"orig":67,"text":"What is 3/4 minus 1/4?","options":["3/8","1","1/4","1/2"],"id":52,"answer":"D"},{"orig":68,"text":"What is 1/2 expressed as a percentage?","options":["12.5%","25%","50%","75%"],"id":53,"answer":"C"},{"orig":69,"text":"The Highest Common Factor (HCF) of 12 and 18 is:","options":["3","6","9","12"],"id":54,"answer":"B"},{"orig":70,"text":"A triangle with one angle exactly equal to 90° is called a:","options":["Isosceles triangle","Right-angled triangle","Obtuse triangle","Equilateral triangle"],"id":55,"answer":"B"},{"orig":71,"text":"The distance from the centre of a circle to any point on its boundary is called the:","options":["Circumference","Chord","Diameter","Radius"],"id":56,"answer":"D"},{"orig":72,"text":"How many flat faces does a cylinder have?","options":["3","0","1","2"],"id":57,"answer":"D"},{"orig":73,"text":"An angle that measures exactly 180° is called a(n):","options":["Right angle","Obtuse angle","Reflex angle","Straight angle"],"id":58,"answer":"D"},{"orig":74,"text":"1 tonne is equal to how many kilograms?","options":["100","1,000","10,000","10"],"id":59,"answer":"B"},{"orig":75,"text":"1 square metre is equal to how many square centimetres?","options":["10,000","100,000","100","1,000"],"id":60,"answer":"A"},{"orig":76,"text":"A regular (non-leap) year has how many days?","options":["366","360","364","365"],"id":61,"answer":"D"},{"orig":77,"text":"What comes next in the pattern of odd numbers: 1, 3, 5, 7, __?","options":["8","9","10","11"],"id":62,"answer":"B"},{"orig":78,"text":"A line graph is generally most appropriate for showing:","options":["Only a single fixed number with no comparison","Only categorical data with no order","Only three-dimensional shapes","A trend or change in data over time"],"id":63,"answer":"D"},{"orig":79,"text":"The volume of a cube with side 4 cm is:","options":["48 cubic cm","64 cubic cm","12 cubic cm","16 cubic cm"],"id":64,"answer":"B"},{"orig":80,"text":"Which of the following is an even number?","options":["53","27","35","48"],"id":65,"answer":"D"},{"orig":81,"text":"Pólya's FOURTH and final step in problem-solving, after carrying out the plan, is to:","options":["Understand the problem","Devise a plan","Look back and review the solution","Restate the original question only"],"id":66,"answer":"C"},{"orig":82,"text":"The 'Concrete' stage of the CPA (Concrete-Pictorial-Abstract) progression involves:","options":["Only drawings and diagrams","Only numerals and symbolic equations","Verbal explanation with no materials at all","Physical manipulation of real objects"],"id":67,"answer":"D"},{"orig":83,"text":"A teacher presents students with an unfamiliar problem requiring them to combine and adapt several previously separate strategies in a new way. This is best classified as a:","options":["Operational definition","Fair test","Routine problem","Non-routine problem"],"id":68,"answer":"D"},{"orig":84,"text":"A student believes that the fraction 1/8 is larger than 1/4, reasoning simply that 8 is a bigger number than 4. This belief reflects a:","options":["Correct understanding","Careless error","Conceptual error","Procedural error"],"id":69,"answer":"C"},{"orig":85,"text":"A student understands the concept of column subtraction with borrowing but makes a mistake while carrying out one of the borrowing steps. This is best classified as a:","options":["Conceptual error","Procedural error","A correct calculation","An assessment tool"],"id":70,"answer":"B"},{"orig":86,"text":"Geoboards and fraction bars used to help students physically explore geometric and fractional concepts are examples of mathematics:","options":["Teaching aids/manipulatives","Non-routine problems","Operational definitions","Summative tests"],"id":71,"answer":"A"},{"orig":87,"text":"A Mathematics Laboratory is generally most effective when its activities are:","options":["Used only once a year as an occasional treat","Avoided in favour of textbook-only instruction","Completely unstructured, with no link to the curriculum","Purposefully linked to specific curricular concepts, followed by reflection"],"id":72,"answer":"D"},{"orig":88,"text":"A teacher keeps a folder of a student's mathematics work samples across the year, showing growth in problem-solving. This assessment tool is called a:","options":["Fair test","Checklist","Portfolio","Rating scale only"],"id":73,"answer":"C"},{"orig":89,"text":"One of the objectives of teaching mathematics, beyond computation, is to help students recognise patterns and symmetry, reflecting mathematics':","options":["Aesthetic appreciation","Irrelevance to daily life","Complete disconnection from reasoning","Purely mechanical nature"],"id":74,"answer":"A"},{"orig":90,"text":"A student solves word problems correctly when the word \"altogether\" appears (assuming it always means addition), but fails when a structurally similar problem uses different wording. This illustrates a risk of:","options":["Over-reliance on superficial key words rather than understanding problem structure","Excellent problem-solving ability","The Look Back step of Pólya's method","Genuine conceptual understanding"],"id":75,"answer":"A"},{"orig":91,"text":"Which part of the plant transports water and nutrients between the roots and the leaves?","options":["Flower","Stem","Seed","Petal"],"id":76,"answer":"B"},{"orig":92,"text":"The green pigment in plant leaves that captures sunlight for photosynthesis is called:","options":["Chitin","Cellulose","Keratin","Chlorophyll"],"id":77,"answer":"D"},{"orig":93,"text":"A butterfly is classified as an insect mainly because it has:","options":["A backbone and fur","Gills for breathing underwater","Four legs and no wings","Six legs and a body divided into three parts"],"id":78,"answer":"D"},{"orig":94,"text":"Fish are able to breathe underwater mainly with the help of their:","options":["Fins only","Lungs","Gills","Skin only"],"id":79,"answer":"C"},{"orig":95,"text":"Which Indian state is especially well known for large-scale tea cultivation?","options":["Rajasthan","Assam","Punjab","Gujarat"],"id":80,"answer":"B"},{"orig":96,"text":"Resources such as solar and wind energy are considered important to use more widely mainly because they are:","options":["Renewable and do not run out with use","Harmful to the environment","Available only in a few countries","Non-renewable and limited"],"id":81,"answer":"A"},{"orig":97,"text":"Tiny water droplets in the air come together to form clouds mainly through the process of:","options":["Germination","Respiration","Evaporation","Condensation"],"id":82,"answer":"D"},{"orig":98,"text":"Which of the following is the longest river in India?","options":["Narmada","Yamuna","Godavari","Ganga"],"id":83,"answer":"D"},{"orig":99,"text":"A clock is an instrument primarily used to measure:","options":["Weight","Temperature","Time","Distance"],"id":84,"answer":"C"},{"orig":100,"text":"Milk and milk products are generally considered a good source of which nutrient, important for strong bones?","options":["Calcium","Only sugar","Only fibre","Vitamin C only"],"id":85,"answer":"A"},{"orig":101,"text":"The sense organ primarily responsible for hearing sounds is the:","options":["Nose","Tongue","Eye","Ear"],"id":86,"answer":"D"},{"orig":102,"text":"An igloo, built from blocks of packed snow, is a traditional shelter used in which type of region?","options":["Coastal plain regions","Hot desert regions","Extremely cold, snowy regions","Tropical rainforest regions"],"id":87,"answer":"C"},{"orig":103,"text":"Which of the following is an example of a means of communication?","options":["Bicycle","Newspaper","Train","Boat"],"id":88,"answer":"B"},{"orig":104,"text":"Plastic bags and bottles are examples of waste that is:","options":["Non-biodegradable","Always recycled immediately","Edible for animals","Biodegradable"],"id":89,"answer":"A"},{"orig":105,"text":"Which of the following is a beneficial role played by certain microorganisms in nature?","options":["They have no role in the environment","They can only be found in laboratories","They always cause disease","They decompose dead plant and animal matter, enriching the soil"],"id":90,"answer":"D"},{"orig":106,"text":"The organ that controls and coordinates most functions of the human body, including thought and movement, is the:","options":["Stomach","Heart","Brain","Liver"],"id":91,"answer":"C"},{"orig":107,"text":"A rain gauge is an instrument specifically used to measure:","options":["Temperature","Wind speed","The amount of rainfall","Air pressure"],"id":92,"answer":"C"},{"orig":108,"text":"A narrow strip of low, flat land found along a coastline is generally called a:","options":["Coastal plain","Mountain range","Desert","Plateau"],"id":93,"answer":"A"},{"orig":109,"text":"Which of the following correctly completes the food chain: Leaves → Caterpillar → __?","options":["Sun","Soil","Bird","Tree"],"id":94,"answer":"C"},{"orig":110,"text":"The process by which pollen is transferred from one flower to another, enabling reproduction in plants, is called:","options":["Respiration","Germination","Pollination","Transpiration"],"id":95,"answer":"C"},{"orig":111,"text":"Which of the following best reflects a GENUINELY integrated approach to teaching the theme \"Water\" in EVS?","options":["Teaching only about the water cycle, in complete isolation","Exploring where local water comes from, who manages it, and water-related festivals, within one\nconnected unit","Teaching only a list of water-related vocabulary words","Avoiding any discussion of water's social or cultural importance"],"id":96,"answer":"B"},{"orig":112,"text":"NCF's Position Paper on EVS recommends teaching methods that move away from:","options":["Rote memorisation disconnected from a child's real experience","Connecting content to the child's own environment","Developing observation and inquiry skills","Activity-based, hands-on exploration"],"id":97,"answer":"A"},{"orig":113,"text":"A statement such as \"this flower has five petals\" is best classified as a(n):","options":["Misconception","Field visit stage","Inference","Observation"],"id":98,"answer":"D"},{"orig":114,"text":"A statement such as \"this flower was probably pollinated recently, since bees are still visiting it\" is best classified as a(n):","options":["A theme","Observation only","Inference","A field visit"],"id":99,"answer":"C"},{"orig":115,"text":"The stage of a field visit in which students carry out structured, purposeful observation guided by pre-established objectives is called:","options":["Pre-visit preparation","The visit itself","Post-visit follow-up","Diagnostic assessment"],"id":100,"answer":"B"},{"orig":116,"text":"Which of the following best reflects the \"knowledge\" dimension of environmental awareness?","options":["Understanding facts about environmental systems, such as the water cycle","Participating in a recycling drive","Having a positive attitude toward the environment, with no factual content","Feeling a personal connection to nature"],"id":101,"answer":"A"},{"orig":117,"text":"A teacher assigns a project in which students conduct a simple survey of waste disposal practices in their local area and present recommendations. This activity best illustrates:","options":["A summative test only","A common misconception","A purely laboratory-based Science activity","The Project Method applied to EVS"],"id":102,"answer":"D"},{"orig":118,"text":"A child believes that \"all microorganisms are germs that make people sick.\" This belief is best described as a:","options":["An inference","Scientifically accurate fact","Common misconception/alternative conception","A field visit stage"],"id":103,"answer":"C"},{"orig":119,"text":"Before correcting a misconception, an effective EVS teacher should first:","options":["Assume the student has no prior beliefs on the topic","Elicit and understand the student's existing beliefs through diagnostic assessment","Ignore the student's current understanding entirely","Immediately move to a written test"],"id":104,"answer":"B"},{"orig":120,"text":"An EVS assessment question that asks students to apply a concept, such as the water cycle, to explain a new, real-life scenario reflects:","options":["Application-based assessment, going beyond simple recall","Only attendance tracking","Only spelling accuracy","Only rote factual recall"],"id":105,"answer":"A"}];
+const DURATION=60*60;
+const ADMIN_PASSWORD="Bikash@420";
+const RESULTS_KEY="ctet_mock_2026_set4_results_v1";
+const CENTRAL_SCOREBOARD_URL="https://script.google.com/macros/s/AKfycbyVa34v4bCORe1JUz9_jQFWgAHueqsL1axwgnPOSkeWPeLemIFFkg3EZyV2GJLpnZyuLg/exec";
+const CENTRAL_API_TOKEN="CTET_SCOREBOARD_2026_BIKAS_420";
+const TEST_ID="MOCK-04-SET4";
 
-/* CENTRAL SCOREBOARD CONNECTION — already configured for you */
-const CENTRAL_SCOREBOARD_URL = "https://script.google.com/macros/s/AKfycbyVa34v4bCORe1JUz9_jQFWgAHueqsL1axwgnPOSkeWPeLemIFFkg3EZyV2GJLpnZyuLg/exec";
-const CENTRAL_API_TOKEN = "CTET_SCOREBOARD_2026_BIKAS_420";
-const TEST_ID = "MOCK-01";
-
-let candidate="", idx=0, answers={}, startAt=0, timerHandle=null, submitted=false;
-
+let candidate="",idx=0,answers={},startAt=0,timerHandle=null,submitted=false;
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 const letter=i=>String.fromCharCode(65+i);
+const answerIndex=L=>L.charCodeAt(0)-65;
 
 function getResults(){try{return JSON.parse(localStorage.getItem(RESULTS_KEY)||"[]")}catch(e){return[]}}
 function saveResults(a){localStorage.setItem(RESULTS_KEY,JSON.stringify(a))}
 
-/*
- * Sends the completed result to the Central Google Apps Script.
- *
- * GitHub Pages -> Google Apps Script Web App
- * Uses text/plain + no-cors so there is no CORS preflight.
- *
- * IMPORTANT:
- * The Google Apps Script must have doPost(e).
- */
 function submitToCentralScoreboard(r){
-  const el=$("centralStatus");
-
-  if(el){
-    el.textContent="CENTRAL SCOREBOARD: SENDING RESULT…";
-    el.style.color="var(--green)";
-  }
-
+  const status=$("centralStatus");
+  if(status){status.textContent="CENTRAL SCOREBOARD: SENDING RESULT…";status.style.color="var(--green)";}
   const payload={
-    token:CENTRAL_API_TOKEN,
-    testId:TEST_ID,
-    candidateName:String(r.candidate||"").trim(),
-    score:Number(r.score)||0,
-    percentage:Number(r.percentage)||0,
-    timeUsed:Number(r.timeUsed)||0,
-    submissionId:String(r.id||""),
-    date:new Date().toISOString()
+    token:CENTRAL_API_TOKEN,testId:TEST_ID,candidateName:String(r.candidate||"").trim(),
+    candidate:String(r.candidate||"").trim(),score:Number(r.score)||0,percentage:Number(r.percentage)||0,
+    timeUsed:Number(r.timeUsed)||0,correct:Number(r.correct)||0,incorrect:Number(r.incorrect)||0,
+    attempted:Number(r.attempted)||0,unanswered:Number(r.unanswered)||0,
+    submissionId:String(r.id||""),date:r.completedAt
   };
-
+  const body=JSON.stringify(payload);
   try{
     return fetch(CENTRAL_SCOREBOARD_URL,{
-      method:"POST",
-      mode:"no-cors",
-      headers:{
-        "Content-Type":"text/plain;charset=UTF-8"
-      },
-      body:JSON.stringify(payload),
-      keepalive:true
-    })
-    .then(()=>{
-      if(el){
-        el.textContent="CENTRAL SCOREBOARD: RESULT SENT";
-        el.style.color="var(--green)";
-      }
-    })
-    .catch(()=>{
-      if(el){
-        el.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED — PLEASE CHECK INTERNET";
-        el.style.color="var(--red)";
-      }
+      method:"POST",mode:"no-cors",redirect:"follow",credentials:"omit",
+      headers:{"Content-Type":"text/plain;charset=UTF-8"},
+      body,keepalive:true
+    }).then(()=>{
+      if(status){status.textContent="CENTRAL SCOREBOARD: SUBMISSION SENT";status.style.color="var(--green)";}
+    }).catch(()=>{
+      try{navigator.sendBeacon(CENTRAL_SCOREBOARD_URL,new Blob([body],{type:"text/plain;charset=UTF-8"}));
+        if(status){status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";status.style.color="var(--green)";}
+      }catch(e){if(status){status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";status.style.color="var(--red)";}}
     });
   }catch(e){
-    if(el){
-      el.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
-      el.style.color="var(--red)";
-    }
+    try{navigator.sendBeacon(CENTRAL_SCOREBOARD_URL,new Blob([body],{type:"text/plain;charset=UTF-8"}));
+      if(status){status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";status.style.color="var(--green)";}
+    }catch(err){if(status){status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";status.style.color="var(--red)";}}
     return Promise.resolve();
   }
 }
 
+let audioCtx=null;
+function ensureAudio(){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;if(!audioCtx)audioCtx=new C();if(audioCtx.state==="suspended")audioCtx.resume();return audioCtx}catch(e){return null}}
+
 function beep(correct){
- const C=window.AudioContext||window.webkitAudioContext;if(!C)return;
- const c=new C(), now=c.currentTime;
- const tones=correct?[523.25,659.25,783.99,1046.5]:[220,174.61,138.59,110];
- tones.forEach((f,i)=>{const o=c.createOscillator(),g=c.createGain();o.type=correct?"sine":"square";o.frequency.value=f;g.gain.setValueAtTime(.001,now+i*.075);g.gain.exponentialRampToValueAtTime(.9,now+i*.075+.015);g.gain.exponentialRampToValueAtTime(.001,now+i*.075+.23);o.connect(g);g.connect(c.destination);o.start(now+i*.075);o.stop(now+i*.075+.25)});
- setTimeout(()=>c.close(),900);
+  const c=ensureAudio();if(!c)return;
+  const now=c.currentTime;
+  const tones=correct?[523.25,659.25,783.99,1046.5,1318.51]:[220,174.61,146.83,110,82.41];
+  const type=correct?"sine":"square";
+  tones.forEach((f,i)=>{
+    const o=c.createOscillator(),g=c.createGain();
+    const t=now+i*(correct?.07:.075);
+    o.type=type;o.frequency.setValueAtTime(f,t);
+    g.gain.setValueAtTime(.0001,t);
+    g.gain.exponentialRampToValueAtTime(1.0,t+.012);
+    g.gain.exponentialRampToValueAtTime(.0001,t+(correct?.25:.30));
+    o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+(correct?.27:.32));
+  });
 }
+
 function fireworks(good){
- const canvas=$("fx"),ctx=canvas.getContext("2d");canvas.width=innerWidth;canvas.height=innerHeight;
- const bursts=[];
- for(let b=0;b<10;b++){bursts.push({x:innerWidth*(.08+.84*Math.random()),y:innerHeight*(.18+.64*Math.random()),t:0,parts:Array.from({length:70},(_,i)=>{let a=Math.PI*2*i/70+Math.random()*.08;let s=2+Math.random()*5;return{x:0,y:0,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:35+Math.random()*35}})})}
- let f=0;
- function frame(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle=good?"#16d96b":"#ff3152";bursts.forEach(b=>b.parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.045;p.life--;if(p.life>0){ctx.globalAlpha=Math.max(0,p.life/65);ctx.beginPath();ctx.arc(b.x+p.x,b.y+p.y,2.2,0,Math.PI*2);ctx.fill()}}));ctx.globalAlpha=1;if(++f<85)requestAnimationFrame(frame);else ctx.clearRect(0,0,canvas.width,canvas.height)}
- frame();
+  const canvas=$("fx"),ctx=canvas.getContext("2d");
+  const dpr=Math.min(devicePixelRatio||1,2);
+  canvas.width=innerWidth*dpr;canvas.height=innerHeight*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const cx=innerWidth/2,cy=innerHeight*.48;
+  const particles=[];
+  const count=190;
+  for(let i=0;i<count;i++){
+    const a=Math.PI*2*i/count+(Math.random()-.5)*.045;
+    const ring=i%3;
+    const speed=(ring===0?3.4:ring===1?4.8:6.0)+Math.random()*1.8;
+    particles.push({
+      x:cx,y:cy,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,
+      life:55+Math.random()*30,size:1.4+Math.random()*2.4,
+      delay:Math.random()*5
+    });
+  }
+  let frame=0;
+  function draw(){
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    particles.forEach(p=>{
+      if(frame<p.delay)return;
+      p.x+=p.vx;p.y+=p.vy;p.vy+=.055;p.vx*=.994;p.vy*=.994;p.life--;
+      if(p.life>0){
+        ctx.globalAlpha=Math.min(1,p.life/22);
+        ctx.fillStyle=good?"#18e76b":"#ff3152";
+        ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+      }
+    });
+    ctx.globalAlpha=1;
+    if(frame++<92)requestAnimationFrame(draw);else ctx.clearRect(0,0,innerWidth,innerHeight);
+  }
+  draw();
 }
+
 function formatTime(sec){sec=Math.max(0,Math.floor(sec));return String(Math.floor(sec/60)).padStart(2,"0")+":"+String(sec%60).padStart(2,"0")}
 
+function sectionFor(q){
+  const o=q.orig;
+  if(o<=30)return "CHILD DEVELOPMENT & PEDAGOGY";
+  if(o<=60)return "LANGUAGE I — ENGLISH";
+  if(o<=90)return "MATHEMATICS";
+  return "ENVIRONMENTAL STUDIES";
+}
+
 function render(){
-  const q=QUESTIONS[idx], a=answers[q.id];
+  const q=QUESTIONS[idx],a=answers[q.id]||"";
   $("progress").textContent=`Question ${idx+1} of ${QUESTIONS.length}`;
+  $("sectionLabel").textContent=sectionFor(q);
+  const fb=a?(a===q.answer?`✓ CORRECT`:`✕ WRONG — Correct answer: ${q.answer}`):"";
   $("qcard").innerHTML=`
-   <div class="qnum">Q${String(q.id).padStart(2,"0")}</div>
-   <div class="question">${esc(q.text)}</div>
-   <div class="options">${q.options.map((o,i)=>{
-     const L=letter(i);
-     return `<div class="opt"><span class="letter">${L}.</span><span>${esc(o)}</span></div>`}).join("")}</div>
-   <div class="omr single"><div class="omrtitle">ANSWER OMR — MARK YOUR ANSWER BELOW</div><div class="bubbles">
-    ${q.options.map((o,i)=>{const L=letter(i);let c=a===L?"selected":"";return `<button type="button" class="bubble ${c}" data-bubble="${L}">${L}</button>`}).join("")}
-   </div><div class="omr-note">Only the OMR bubble is clickable. Selecting an option above does not answer the question.</div></div>
-   <div class="actions">
-    ${idx===QUESTIONS.length-1?`<button id="submitBtn" class="submit">SUBMIT EXAM</button>`:""}
-    <button id="nextBtn" class="next" ${a?"":"disabled"}>${idx===QUESTIONS.length-1?"FINISH":"NEXT"}</button>
-   </div>`;
-  $("qcard").querySelectorAll("[data-bubble]").forEach(el=>el.onclick=()=>choose(el.dataset.bubble));
-  $("nextBtn").onclick=()=>{if(idx<QUESTIONS.length-1){idx++;render();window.scrollTo({top:0,behavior:"smooth"})}else submitExam()};
-  const sb=$("submitBtn");if(sb)sb.onclick=submitExam;
-  renderPalette();
+    <div class="qnum">Q${q.id}</div>
+    <div class="question">${esc(q.text)}</div>
+    <div class="options">${q.options.map((o,i)=>{
+      const L=letter(i);
+      let cls="opt";
+      if(a===L)cls+=" selected";
+      if(a){if(q.answer===L)cls+=" correct";else if(a===L)cls+=" wrong"}
+      return `<button type="button" class="${cls}" data-opt="${L}" ${a?"disabled":""}>
+        <span class="letter">${L}.</span><span>${esc(o)}</span></button>`;
+    }).join("")}</div>
+    <div class="feedback ${a?(a===q.answer?"ok":"bad"):""}">${fb}</div>
+    <div class="actions"><button id="nextBtn" class="next" type="button" ${a?"":"disabled"}>${idx===QUESTIONS.length-1?"FINISH":"NEXT"}</button></div>`;
+  $("qcard").querySelectorAll("[data-opt]").forEach(el=>el.onclick=()=>choose(el.dataset.opt));
+  $("nextBtn").onclick=()=>{if(idx<QUESTIONS.length-1){idx++;render()}else submitExam()};
+  $("correctBtn").textContent=`CORRECT: ${countCorrectLive()}`;
 }
-function renderPalette(){$("palette").innerHTML=QUESTIONS.map((q,i)=>`<button class="p ${answers[q.id]?"done":""} ${i===idx?"current":""}" data-i="${i}">${i+1}</button>`).join("");$("palette").querySelectorAll(".p").forEach(b=>b.onclick=()=>{idx=+b.dataset.i;render()})}
+
+function countCorrectLive(){let n=0;QUESTIONS.forEach(q=>{if(answers[q.id]===q.answer)n++});return n}
+
 function choose(L){
- if(submitted)return;
- const q=QUESTIONS[idx];if(answers[q.id])return;
- answers[q.id]=L; const ok=L===q.answer; beep(ok);fireworks(ok);render();
+  if(submitted)return;
+  const q=QUESTIONS[idx];if(answers[q.id])return;
+  answers[q.id]=L;
+  const ok=L===q.answer;
+  beep(ok);fireworks(ok);
+  render();
 }
+
 function startExam(){
- candidate=$("candidate").value.trim();if(!candidate){$("candidate").focus();return}
- idx=0;answers={};submitted=false;startAt=Date.now();
- $("start").classList.add("hidden");$("result").classList.add("hidden");$("admin").classList.add("hidden");$("exam").classList.remove("hidden");
- render();timerHandle=setInterval(tick,250);tick();
+  const n=$("candidate").value.trim();
+  if(!n){$("candidate").focus();return}
+  ensureAudio();
+  candidate=n;idx=0;answers={};submitted=false;startAt=Date.now();
+  $("start").classList.add("hidden");$("result").classList.add("hidden");$("admin").classList.add("hidden");$("exam").classList.remove("hidden");
+  render();timerHandle=setInterval(tick,250);tick();
 }
+
 function tick(){
- const used=Math.floor((Date.now()-startAt)/1000), left=DURATION-used;$("timer").textContent=formatTime(left);
- $("timer").classList.toggle("warn",left<=300);
- if(left<=0)submitExam();
+  const used=Math.floor((Date.now()-startAt)/1000),left=DURATION-used;
+  $("timer").textContent=formatTime(left);$("timer").classList.toggle("warn",left<=300);
+  if(left<=0)submitExam();
 }
+
 function submitExam(){
- if(submitted)return;submitted=true;clearInterval(timerHandle);
- const used=Math.min(DURATION,Math.floor((Date.now()-startAt)/1000));
- let correct=0,attempted=0;QUESTIONS.forEach(q=>{if(answers[q.id]){attempted++;if(answers[q.id]===q.answer)correct++}});
- const wrong=attempted-correct,unanswered=QUESTIONS.length-attempted;
- const result={id:crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random(),candidate,score:correct,percentage:(correct/QUESTIONS.length*100),correct,incorrect:wrong,attempted,unanswered,timeUsed:used,completedAt:new Date().toISOString(),answers};
- const arr=getResults();arr.push(result);saveResults(arr);
- showResult(result);
- submitToCentralScoreboard(result);
+  if(submitted)return;submitted=true;clearInterval(timerHandle);
+  const used=Math.min(DURATION,Math.floor((Date.now()-startAt)/1000));
+  let correct=0,attempted=0;
+  QUESTIONS.forEach(q=>{if(answers[q.id]){attempted++;if(answers[q.id]===q.answer)correct++}});
+  const incorrect=attempted-correct,unanswered=QUESTIONS.length-attempted;
+  const result={
+    id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),
+    candidate,score:correct,percentage:correct/QUESTIONS.length*100,correct,incorrect,attempted,unanswered,
+    timeUsed:used,completedAt:new Date().toISOString(),answers:{...answers}
+  };
+  const arr=getResults();arr.push(result);saveResults(arr);
+  showResult(result);submitToCentralScoreboard(result);
 }
+
 function showResult(r){
   $("exam").classList.add("hidden");$("result").classList.remove("hidden");
-  const rows=QUESTIONS.map(q=>{const a=r.answers[q.id],ok=a===q.answer;return `<div class="review-row"><div class="review-q">Q${String(q.id).padStart(2,"0")}. ${esc(q.text)}</div><div class="review-a">Your Answer: <b>${a?esc(a+". "+q.options[a.charCodeAt(0)-65]):"Unanswered"}</b> · Correct Answer: <b>${q.answer}. ${esc(q.options[q.answer.charCodeAt(0)-65])}</b> <span class="tag ${!a?"skip":ok?"ok":"bad"}">${!a?"UNANSWERED":ok?"CORRECT":"WRONG"}</span></div></div>`}).join("");
-
-  const resultOMR=QUESTIONS.map(q=>{
-    const a=r.answers[q.id]||"";
-    const cells=["A","B","C","D"].map(L=>{
-      const cls=(a===L?"candidate ":"")+(q.answer===L?"official":"");
-      return `<span class="rb ${cls.trim()}">${L}</span>`;
-    }).join("");
-    const status=a===q.answer && a ? `<span class="status ok">✓</span>` :
-      a ? `<span class="status bad">✕</span>` : `<span class="status skip">—</span>`;
-    return `<div class="result-omr-row"><span class="rq">Q${q.id}</span>${cells}<span class="status" style="color:var(--green);font-size:10px;font-weight:900">KEY<br>${q.answer}</span>${status}</div>`;
+  const rows=QUESTIONS.map(q=>{
+    const a=r.answers[q.id]||"",ok=a===q.answer;
+    const your=a?`${a}. ${q.options[answerIndex(a)]}`:"Unanswered";
+    const correct=`${q.answer}. ${q.options[answerIndex(q.answer)]}`;
+    return `<div class="reviewRow"><div class="reviewQ">Q${q.id}. ${esc(q.text)}</div>
+      <div class="reviewA">Candidate's Answer: <b>${esc(your)}</b> · Correct Answer: <b>${esc(correct)}</b>
+      <span class="tag ${!a?"skip":ok?"ok":"bad"}">${!a?"UNANSWERED":ok?"CORRECT":"WRONG"}</span></div></div>`;
   }).join("");
-
-  $("result").innerHTML=`<div class="result-card">
-   <h1 class="result-title">MOCK TEST RESULT</h1><div class="candidate">${esc(r.candidate)}</div>
-   <div class="stats">
-    <div class="stat"><small>Score</small><strong>${r.score}</strong></div>
-    <div class="stat"><small>Percentage</small><strong>${r.percentage.toFixed(2)}%</strong></div>
-    <div class="stat"><small>Time Used</small><strong>${formatTime(r.timeUsed)}</strong></div>
-    <div class="stat"><small>Attempted</small><strong>${r.attempted}</strong></div>
-    <div class="stat"><small>Correct</small><strong>${r.correct}</strong></div>
-    <div class="stat"><small>Incorrect</small><strong>${r.incorrect}</strong></div>
-    <div class="stat"><small>Unanswered</small><strong>${r.unanswered}</strong></div>
-    <div class="stat"><small>Total Questions</small><strong>${QUESTIONS.length}</strong></div>
-   </div>
-   <div class="result-omr-compare">
-    <div class="omr-sheet">
-     <h3>ANSWER OMR — CANDIDATE vs OFFICIAL ANSWER</h3>
-     <div class="result-omr-review">${resultOMR}</div>
-     <div class="omr-legend2">Dark bubble = Candidate answer · Green ring = Official answer · ✓ = Correct · <span style="color:var(--red);font-weight:900">✕</span> = Wrong · — = Unanswered</div>
+  $("result").innerHTML=`<div class="resultCard">
+    <h1 class="resultTitle">MOCK TEST RESULT</h1>
+    <div class="candidate">${esc(r.candidate)}</div>
+    <div class="stats">
+      <div class="stat"><small>Total Questions</small><strong>${QUESTIONS.length}</strong></div>
+      <div class="stat"><small>Attempted</small><strong>${r.attempted}</strong></div>
+      <div class="stat"><small>Correct</small><strong>${r.correct}</strong></div>
+      <div class="stat"><small>Incorrect</small><strong>${r.incorrect}</strong></div>
+      <div class="stat"><small>Unanswered</small><strong>${r.unanswered}</strong></div>
+      <div class="stat"><small>Score</small><strong>${r.score}</strong></div>
+      <div class="stat"><small>Percentage</small><strong>${r.percentage.toFixed(2)}%</strong></div>
+      <div class="stat"><small>Time Used</small><strong>${formatTime(r.timeUsed)}</strong></div>
     </div>
-   </div>
-   <div id="centralStatus" style="margin-top:14px;text-align:center;font-size:12px;font-weight:900;color:var(--green)">CENTRAL SCOREBOARD: SENDING RESULT…</div>
-   <div class="result-actions"><button onclick="window.print()">PRINT / SAVE PDF</button><button onclick="location.reload()">BACK TO START</button><button onclick="adminLogin()">ADMIN PORTAL</button></div>
-   <div class="review"><h3>ANSWER REVIEW</h3>${rows}</div>
+    <div id="centralStatus" class="status">CENTRAL SCOREBOARD: SENDING RESULT…</div>
+    <div class="resultActions">
+      <button onclick="window.print()">PRINT / SAVE PDF</button>
+      <button onclick="location.reload()">BACK TO START</button>
+      <button onclick="adminLogin()">ADMIN PORTAL</button>
+    </div>
+    <div class="review"><h3>ANSWER REVIEW</h3>${rows}</div>
   </div>`;
 }
-function adminLogin(){const p=prompt("Admin Password");if(p!==ADMIN_PASSWORD){alert("Incorrect password.");return}$("start").classList.add("hidden");$("result").classList.add("hidden");$("exam").classList.add("hidden");$("admin").classList.remove("hidden");renderAdmin()}
+
+function adminLogin(){
+  const p=prompt("Admin Password");
+  if(p!==ADMIN_PASSWORD){alert("Incorrect password.");return}
+  $("start").classList.add("hidden");$("exam").classList.add("hidden");$("result").classList.add("hidden");$("admin").classList.remove("hidden");
+  $("timer").textContent="60:00";$("correctBtn").textContent="CORRECT: 0";renderAdmin();
+}
+
+function rankResults(rs){
+  return rs.slice().sort((a,b)=>b.score-a.score||a.timeUsed-b.timeUsed||new Date(a.completedAt)-new Date(b.completedAt));
+}
+
 function renderAdmin(){
- const rs=getResults().slice().reverse();
- const wrap=$("adminTable");
- if(!rs.length){wrap.innerHTML='<div class="empty">No saved candidate results.</div>';return}
- wrap.innerHTML=`<div class="tablewrap"><table class="tbl"><thead><tr><th>Candidate Name</th><th>Score</th><th>Time Used</th><th>Exam Date</th><th>Exam Time</th><th>Correct</th><th>Wrong</th><th>Unattempted</th><th>Accuracy</th><th>Rank</th></tr></thead><tbody>${rs.map((r,i)=>{const d=new Date(r.completedAt);return `<tr><td>${esc(r.candidate)}</td><td>${r.score}</td><td>${formatTime(r.timeUsed)}</td><td>${d.toLocaleDateString()}</td><td>${d.toLocaleTimeString()}</td><td>${r.correct}</td><td>${r.incorrect}</td><td>${r.unanswered}</td><td>${r.percentage.toFixed(2)}%</td><td>${i+1}</td></tr>`}).join("")}</tbody></table></div>`;
+  const rs=rankResults(getResults()),wrap=$("adminTable");
+  if(!rs.length){wrap.innerHTML='<div class="empty">No saved candidate results.</div>';return}
+  wrap.innerHTML=`<div class="tableWrap"><table><thead><tr>
+    <th>Rank</th><th>Candidate Name</th><th>Score</th><th>Percentage</th><th>Correct</th><th>Incorrect</th><th>Attempted</th><th>Unanswered</th><th>Time Used</th><th>Completed Date/Time</th>
+  </tr></thead><tbody>${rs.map((r,i)=>{
+    const d=new Date(r.completedAt);
+    return `<tr><td>${i+1}</td><td>${esc(r.candidate)}</td><td>${r.score}</td><td>${r.percentage.toFixed(2)}%</td><td>${r.correct}</td><td>${r.incorrect}</td><td>${r.attempted}</td><td>${r.unanswered}</td><td>${formatTime(r.timeUsed)}</td><td>${d.toLocaleString()}</td></tr>`;
+  }).join("")}</tbody></table></div>`;
 }
-function csv(){
- const rs=getResults().slice().sort((a,b)=>b.score-a.score||a.timeUsed-b.timeUsed);const head=["Rank","Candidate Name","Score","Percentage","Time Used","Exam Date","Exam Time","Correct","Wrong","Unattempted"];
- const lines=[head,...rs.map(r=>{const d=new Date(r.completedAt);const rank=rs.findIndex(x=>x.score===r.score)+1;return [rank,r.candidate,r.score,r.percentage.toFixed(2)+"%",formatTime(r.timeUsed),d.toLocaleDateString(),d.toLocaleTimeString(),r.correct,r.incorrect,r.unanswered]})];
- const txt="\uFEFF"+lines.map(row=>row.map(x=>`"${String(x).replaceAll('"','""')}"`).join(",")).join("\r\n");
- const blob=new Blob([txt],{type:"text/csv;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="ctet_mock_results.csv";a.click();URL.revokeObjectURL(a.href);
+
+function downloadCSV(){
+  const rs=rankResults(getResults());
+  const head=["Rank","Candidate Name","Score","Time used","Percentage","Completed Date/Time"];
+  const lines=[head,...rs.map((r,i)=>[i+1,r.candidate,r.score,formatTime(r.timeUsed),r.percentage.toFixed(2)+"%",new Date(r.completedAt).toLocaleString()])];
+  const txt="\uFEFF"+lines.map(row=>row.map(v=>`"${String(v).replaceAll('"','""')}"`).join(",")).join("\r\n");
+  const blob=new Blob([txt],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="CTET_Set4_Results.csv";a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
+
 function toggleTheme(){
   document.body.classList.toggle("light");
-  const light=document.body.classList.contains("light");
-  localStorage.setItem("ctet_theme",light?"light":"dark");
-  $("themeBtn").textContent=light?"🌙 DARK":"☀️ THEME";
+  localStorage.setItem("ctet_mock_theme",document.body.classList.contains("light")?"light":"dark");
+  $("themeBtn").textContent=document.body.classList.contains("light")?"☾ DARK":"☀ THEME";
 }
 function loadTheme(){
-  const light=localStorage.getItem("ctet_theme")==="light";
-  document.body.classList.toggle("light",light);
-  if($("themeBtn"))$("themeBtn").textContent=light?"🌙 DARK":"☀️ THEME";
+  const light=localStorage.getItem("ctet_mock_theme")==="light";
+  document.body.classList.toggle("light",light);$("themeBtn").textContent=light?"☾ DARK":"☀ THEME";
 }
-$("themeBtn").onclick=toggleTheme;
-$("adminTopBtn").onclick=adminLogin;
-loadTheme();
 
 $("startBtn").onclick=startExam;
 $("candidate").addEventListener("keydown",e=>{if(e.key==="Enter")startExam()});
+$("themeBtn").onclick=toggleTheme;
+$("adminBtn").onclick=adminLogin;
 $("refreshAdmin").onclick=renderAdmin;
-$("csvAdmin").onclick=csv;
+$("csvAdmin").onclick=downloadCSV;
 $("printAdmin").onclick=()=>window.print();
-$("clearAdmin").onclick=()=>{if(confirm("Are you sure you want to delete all candidate results?")){localStorage.removeItem(RESULTS_KEY);renderAdmin()}};
-window.adminLogin=adminLogin;
+$("clearAdmin").onclick=()=>{
+  if(confirm("Are you sure you want to delete all candidate results?")){localStorage.removeItem(RESULTS_KEY);renderAdmin()}
+};
+loadTheme();
 </script>
 </body>
 </html>
