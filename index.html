@@ -110,7 +110,7 @@ label{display:block;margin:28px 0 9px;font-weight:700}.name{width:100%;padding:1
 <section id="admin" class="admin hidden">
  <div class="admin-card">
   <div class="adminbar">
-   <div><h2>ADMIN PORTAL</h2><div class="sub" style="text-align:left">Saved results in this browser</div></div>
+   <div><h2>ADMIN PORTAL</h2><div class="sub" style="text-align:left">Local results in this browser</div></div>
    <div class="admin-tools">
     <button id="refreshAdmin">REFRESH RESULTS</button>
     <button id="csvAdmin">DOWNLOAD RESULTS CSV</button>
@@ -129,7 +129,7 @@ const ADMIN_PASSWORD = "Bikash@420";
 const RESULTS_KEY = "ctet_mock_2026_set1_results_v1";
 
 /* CENTRAL SCOREBOARD CONNECTION — already configured for you */
-const CENTRAL_SCOREBOARD_URL = "https://script.google.com/macros/s/AKfycbytueCrNAG0lJv3EnzQFeziSNuDepsWoxgxHOfUMLLQWxm5b5dur3xWMCEaj2ID7VNbEA/exec";
+const CENTRAL_SCOREBOARD_URL = "https://script.google.com/macros/s/AKfycbxZzOyt0gS3bSlJcefAiiLyv9aDp84mdyCoI5FRIzhNYzxtLrauLjh_OWqixvyjvJq5hw/exec";
 const CENTRAL_API_TOKEN = "CTET_SCOREBOARD_2026_BIKAS_420";
 const TEST_ID = "MOCK-01";
 
@@ -143,38 +143,59 @@ function getResults(){try{return JSON.parse(localStorage.getItem(RESULTS_KEY)||"
 function saveResults(a){localStorage.setItem(RESULTS_KEY,JSON.stringify(a))}
 
 /*
- * Sends the completed result to the Google Apps Script Central Scoreboard.
- * The request intentionally uses text/plain + no-cors so a GitHub-hosted
- * HTML page can submit without a browser CORS preflight. The same submission
- * ID is used by the server to prevent duplicate rows.
+ * Sends the completed result to the Central Google Apps Script.
+ *
+ * GitHub Pages -> Google Apps Script Web App
+ * Uses text/plain + no-cors so there is no CORS preflight.
+ *
+ * IMPORTANT:
+ * The Google Apps Script must have doPost(e).
  */
 function submitToCentralScoreboard(r){
+  const el=$("centralStatus");
+
+  if(el){
+    el.textContent="CENTRAL SCOREBOARD: SENDING RESULT…";
+    el.style.color="var(--green)";
+  }
+
+  const payload={
+    token:CENTRAL_API_TOKEN,
+    testId:TEST_ID,
+    candidate:String(r.candidate||"").trim(),
+    score:Number(r.score)||0,
+    percentage:Number(r.percentage)||0,
+    timeUsed:Number(r.timeUsed)||0,
+    submissionId:String(r.id||"")
+  };
+
   try{
-    const payload={
-      token:CENTRAL_API_TOKEN,
-      testId:TEST_ID,
-      candidate:r.candidate,
-      score:r.score,
-      percentage:r.percentage,
-      timeUsed:r.timeUsed,
-      submissionId:r.id
-    };
     return fetch(CENTRAL_SCOREBOARD_URL,{
       method:"POST",
       mode:"no-cors",
-      headers:{"Content-Type":"text/plain;charset=UTF-8"},
+      headers:{
+        "Content-Type":"text/plain;charset=UTF-8"
+      },
       body:JSON.stringify(payload),
       keepalive:true
-    }).then(()=>{
-      const el=$("centralStatus");
-      if(el)el.textContent="CENTRAL SCOREBOARD: RESULT SENT";
-    }).catch(()=>{
-      const el=$("centralStatus");
-      if(el)el.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
+    })
+    .then(()=>{
+      if(el){
+        el.textContent="CENTRAL SCOREBOARD: RESULT SENT";
+        el.style.color="var(--green)";
+      }
+    })
+    .catch(()=>{
+      if(el){
+        el.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED — PLEASE CHECK INTERNET";
+        el.style.color="var(--red)";
+      }
     });
   }catch(e){
-    const el=$("centralStatus");
-    if(el)el.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
+    if(el){
+      el.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
+      el.style.color="var(--red)";
+    }
     return Promise.resolve();
   }
 }
