@@ -129,7 +129,7 @@ const ADMIN_PASSWORD = "Bikash@420";
 const RESULTS_KEY = "ctet_mock_2026_set1_results_v1";
 
 /* CENTRAL SCOREBOARD CONNECTION — already configured for you */
-const CENTRAL_SCOREBOARD_URL = "https://script.google.com/macros/s/AKfycbxZzOyt0gS3bSlJcefAiiLyv9aDp84mdyCoI5FRIzhNYzxtLrauLjh_OWqixvyjvJq5hw/exec";
+const CENTRAL_SCOREBOARD_URL = "https://script.google.com/macros/s/AKfycbyVa34v4bCORe1JUz9_jQFWgAHueqsL1axwgnPOSkeWPeLemIFFkg3EZyV2GJLpnZyuLg/exec";
 const CENTRAL_API_TOKEN = "CTET_SCOREBOARD_2026_BIKAS_420";
 const TEST_ID = "MOCK-01";
 
@@ -162,11 +162,12 @@ function submitToCentralScoreboard(r){
   const payload={
     token:CENTRAL_API_TOKEN,
     testId:TEST_ID,
-    candidate:String(r.candidate||"").trim(),
+    candidateName:String(r.candidate||"").trim(),
     score:Number(r.score)||0,
     percentage:Number(r.percentage)||0,
     timeUsed:Number(r.timeUsed)||0,
-    submissionId:String(r.id||"")
+    submissionId:String(r.id||""),
+    date:new Date().toISOString()
   };
 
   try{
