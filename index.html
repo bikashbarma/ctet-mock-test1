@@ -1,446 +1,54 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#000000">
-<title>CTET Mock Test 2026 — Paper I — Set 4 | Central Scoreboard</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000"><title>CTET Mock Test 2026 — SET 5</title>
 <style>
-:root{--bg:#000;--panel:#090909;--panel2:#111;--line:#292929;--text:#fff;--muted:#aaa;--green:#18e76b;--red:#ff3152;--gold:#ffd45a;--blue:#5f8cff}
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow:hidden}
-body.light{--bg:#f4f6fa;--panel:#fff;--panel2:#f1f3f7;--line:#d8dce5;--text:#111;--muted:#626a78;--gold:#8b5d00;--blue:#315fce}
-button,input{font:inherit}
-button{cursor:pointer;-webkit-tap-highlight-color:transparent}
-.hidden{display:none!important}
-.topbar{position:fixed;left:0;right:0;top:0;height:68px;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:8px 12px;background:rgba(0,0,0,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-body.light .topbar{background:rgba(255,255,255,.95)}
-.leftbox{justify-self:start}
-.rightbox{justify-self:end;display:flex;align-items:center;gap:8px}
-.centerbox{justify-self:center;text-align:center;min-width:100px}
-.themeBtn,.adminBtn,.correctBtn{border:1px solid #444;border-radius:11px;padding:9px 12px;background:#111;color:#fff;font-weight:1000;letter-spacing:.03em}
-body.light .themeBtn,body.light .adminBtn,body.light .correctBtn{background:#fff;color:#111;border-color:#c4c9d3}
-.adminBtn{background:var(--gold);color:#000;border-color:var(--gold)}
-.correctBtn{display:block;margin:auto;background:#0b301b;border-color:#1e9c52;color:#69ff9d;min-width:110px}
-.timer{margin-top:3px;font-variant-numeric:tabular-nums;font-size:18px;font-weight:1000;letter-spacing:.04em}
-.timer.warn{color:#ffb13b}
-.screen{position:fixed;inset:68px 0 0;display:flex;align-items:center;justify-content:center;padding:18px}
-.startCard{width:min(560px,92vw);background:linear-gradient(180deg,#101010,#070707);border:1px solid #2a2a2a;border-radius:24px;padding:30px;box-shadow:0 25px 90px rgba(0,0,0,.65)}
-body.light .startCard{background:#fff;border-color:#d8dce5;box-shadow:0 20px 60px rgba(0,0,0,.10)}
-.brand{margin:0;text-align:center;font-size:clamp(30px,6vw,46px);font-weight:1000;letter-spacing:.10em}
-label{display:block;margin:28px 0 9px;font-weight:1000;font-size:18px}
-.name{width:100%;height:56px;border:1px solid #3a3a3a;border-radius:14px;background:#050505;color:#fff;padding:0 16px;outline:none;font-weight:800;font-size:18px}
-body.light .name{background:#f8f9fc;color:#111;border-color:#cfd4de}
-.name:focus{border-color:var(--blue)}
-.startBtn{width:100%;height:58px;margin-top:12px;border:0;border-radius:14px;background:#fff;color:#000;font-weight:1000;font-size:18px;letter-spacing:.04em}
-.exam{position:fixed;inset:68px 0 0;height:calc(100dvh - 68px);padding:10px 12px}
-.examInner{height:100%;max-width:1100px;margin:auto;display:flex;flex-direction:column;min-height:0}
-.progress{height:28px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px;font-weight:900;padding:0 3px}
-.qcard{flex:1;min-height:0;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:clamp(14px,2.2vh,22px);display:flex;flex-direction:column;box-shadow:0 18px 70px rgba(0,0,0,.35)}
-.qnum{color:var(--gold);font-weight:1000;font-size:15px;margin-bottom:7px}
-.question{font-size:clamp(16px,2.3vh,21px);line-height:1.38;font-weight:800;max-width:1000px}
-.options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:clamp(12px,2vh,18px)}
-.opt{min-height:54px;border:1px solid #333;border-radius:13px;background:var(--panel2);color:var(--text);padding:11px 13px;text-align:left;display:flex;gap:10px;align-items:flex-start;font-weight:750;line-height:1.28;font-size:clamp(14px,1.9vh,17px);transition:.12s}
-.opt:active{transform:scale(.995)}
-.opt.selected{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue) inset}
-.opt.correct{background:#0a321a;border-color:var(--green);color:#c9ffdc}
-.opt.wrong{background:#3a0811;border-color:var(--red);color:#ffd1d8}
-.letter{font-weight:1000;min-width:24px}
-.feedback{min-height:26px;margin-top:7px;font-size:13px;font-weight:1000}
-.feedback.ok{color:var(--green)} .feedback.bad{color:var(--red)}
-.actions{margin-top:auto;padding-top:9px;display:flex;justify-content:flex-end}
-.next{width:min(240px,100%);height:54px;border:0;border-radius:14px;background:#fff;color:#000;font-weight:1000;font-size:18px}
-.next:disabled{opacity:.35;cursor:not-allowed}
-.result,.admin{position:fixed;inset:68px 0 0;overflow:auto;padding:18px}
-.resultCard,.adminCard{width:min(1150px,100%);margin:auto;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:22px}
-.resultTitle{text-align:center;font-weight:1000;letter-spacing:.08em;margin:0}
-.candidate{text-align:center;color:var(--muted);font-weight:800;margin-top:7px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:18px}
-.stat{border:1px solid var(--line);background:var(--panel2);border-radius:14px;padding:13px}
-.stat small{display:block;color:var(--muted);font-weight:800}
-.stat strong{display:block;font-size:22px;margin-top:4px;font-weight:1000}
-.review{margin-top:20px;display:grid;gap:9px}
-.reviewRow{border:1px solid var(--line);border-radius:13px;padding:13px;background:var(--panel2)}
-.reviewQ{font-weight:900;line-height:1.35}
-.reviewA{margin-top:7px;color:var(--muted);font-size:14px;line-height:1.4}
-.tag{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:1000;margin-left:5px}
-.ok{background:#123e23;color:#70ff9f} .bad{background:#470b17;color:#ff91a4} .skip{background:#303030;color:#bbb}
-.resultActions,.adminTools{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
-.resultActions button,.adminTools button{border:1px solid #444;border-radius:11px;padding:11px 13px;background:#111;color:#fff;font-weight:900}
-body.light .resultActions button,body.light .adminTools button{background:#fff;color:#111;border-color:#c4c9d3}
-.danger{border-color:#9d253b!important;color:#ff91a4!important}
-.adminHead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.adminTitle{margin:0;font-weight:1000}
-.tableWrap{overflow:auto;margin-top:16px}
-table{width:100%;border-collapse:collapse;min-width:900px}
-th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-th{color:var(--muted);font-size:12px}
-.empty{padding:30px;text-align:center;color:var(--muted);font-weight:800}
-.status{margin-top:10px;text-align:center;font-size:12px;font-weight:1000}
-#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1000}
-@media(max-width:700px){
- .topbar{height:62px;padding:7px 8px}
- .screen,.exam,.result,.admin{inset:62px 0 0}
- .exam{height:calc(100dvh - 62px);padding:7px 8px}
- .themeBtn,.adminBtn,.correctBtn{font-size:10px;padding:8px 8px;border-radius:9px}
- .correctBtn{min-width:90px}
- .timer{font-size:16px}
- .startCard{padding:23px}
- .options{grid-template-columns:1fr;gap:7px}
- .opt{min-height:49px;padding:9px 11px}
- .qcard{border-radius:16px;padding:13px}
- .progress{height:24px;font-size:11px}
- .next{height:52px;width:100%}
- .stats{grid-template-columns:repeat(2,1fr)}
- .result,.admin{padding:10px}
-}
-@media(max-height:620px) and (orientation:landscape){
- .question{font-size:15px;line-height:1.25}
- .opt{min-height:42px;font-size:13px;padding:7px 9px}
- .options{gap:6px;margin-top:7px}
- .qcard{padding:10px}
- .next{height:45px}
-}
-@media print{
- html,body{overflow:visible;background:#fff!important;color:#000!important}
- .topbar,.resultActions,.adminTools,#fx{display:none!important}
- .result,.admin{position:static;overflow:visible;padding:0}
- .resultCard,.adminCard{border:0;box-shadow:none}
-}
-</style>
-</head>
-<body>
-<canvas id="fx"></canvas>
-
-<header class="topbar">
-  <div class="leftbox"><button id="themeBtn" class="themeBtn" type="button">☀ THEME</button></div>
-  <div class="centerbox">
-    <button id="correctBtn" class="correctBtn" type="button">CORRECT: 0</button>
-    <div id="timer" class="timer">60:00</div>
-  </div>
-  <div class="rightbox"><button id="adminBtn" class="adminBtn" type="button">ADMIN PORTAL</button></div>
-</header>
-
-<section id="start" class="screen">
-  <div class="startCard">
-    <h1 class="brand">MOCK TEST</h1>
-    <label for="candidate">Candidate Name</label>
-    <input id="candidate" class="name" autocomplete="name" spellcheck="false">
-    <button id="startBtn" class="startBtn" type="button">EXAM START</button>
-  </div>
-</section>
-
-<section id="exam" class="exam hidden">
-  <div class="examInner">
-    <div class="progress"><span id="progress"></span><span id="sectionLabel"></span></div>
-    <div id="qcard" class="qcard"></div>
-  </div>
-</section>
-
-<section id="result" class="result hidden"></section>
-
-<section id="admin" class="admin hidden">
-  <div class="adminCard">
-    <div class="adminHead">
-      <div><h2 class="adminTitle">ADMIN DASHBOARD</h2></div>
-      <div class="adminTools">
-        <button id="refreshAdmin">REFRESH RESULTS</button>
-        <button id="csvAdmin">DOWNLOAD RESULTS CSV</button>
-        <button id="printAdmin">PRINT / SAVE PDF REPORT</button>
-        <button id="clearAdmin" class="danger">CLEAR ALL RESULTS</button>
-      </div>
-    </div>
-    <div id="adminTable"></div>
-  </div>
-</section>
-
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
+body.light{background:#f4f4f4;color:#111}button,input{font:inherit}.app{height:100dvh;display:flex;flex-direction:column}
+.top{height:58px;min-height:58px;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:7px 10px;border-bottom:1px solid #222}
+body.light .top{border-color:#ccc}.l{justify-self:start}.c{text-align:center;justify-self:center}.r{justify-self:end}
+.icon,.admin,.counter,.timer{background:#0b0b0b;color:inherit;border:1px solid #292929;border-radius:10px;font-weight:900}.icon{width:40px;height:40px}.admin{padding:9px 11px;font-size:12px}.counter{padding:6px 12px;font-size:14px}.timer{margin-top:2px;padding:3px 12px;font-size:20px}
+main{flex:1;min-height:0;padding:10px;display:flex;justify-content:center}.screen{width:min(1000px,100%);height:100%;min-height:0}
+.card{height:100%;background:#0b0b0b;border:1px solid #252525;border-radius:15px;padding:clamp(12px,2vw,25px)}
+body.light .card{background:#fff;border-color:#ccc}.start{display:flex;align-items:center;justify-content:center}.startin{width:min(520px,100%);text-align:center}
+h1{font-size:clamp(30px,6vw,54px);margin:0 0 38px;font-weight:1000}.startin label{display:block;text-align:left;font-weight:1000;margin-bottom:8px}
+.name{width:100%;height:52px;border-radius:11px;border:1px solid #333;background:#050505;color:#fff;padding:0 14px;font-weight:800}.startbtn,.next{width:100%;height:56px;border:0;border-radius:12px;background:#00e5ff;color:#001014;font-weight:1000;cursor:pointer}.startbtn{margin-top:14px;font-size:17px}.startbtn:disabled,.next:disabled{opacity:.35;cursor:not-allowed}
+.exam{display:flex;flex-direction:column;gap:9px}.qh{display:flex;justify-content:space-between;align-items:center}.qn{font-size:18px;font-weight:1000}.prog{font-size:13px;color:#aaa;font-weight:800}
+.question{font-size:clamp(18px,2.35vw,25px);line-height:1.32;font-weight:850;overflow:auto;padding:7px 2px}.opts{display:grid;grid-template-columns:1fr 1fr;gap:9px;flex:1;min-height:0}
+.opt{min-height:57px;border:1px solid #303030;border-radius:12px;background:#111;color:inherit;padding:10px 12px;text-align:left;cursor:pointer;font-size:clamp(15px,1.8vw,19px);font-weight:800;line-height:1.25;display:flex;gap:10px;align-items:flex-start;overflow:auto}
+.opt .let{min-width:27px;height:27px;border-radius:50%;background:#222;display:inline-flex;align-items:center;justify-content:center;font-size:13px}.opt.sel{outline:2px solid #00e5ff}.opt.good{background:rgba(0,230,118,.18);border-color:#00e676;outline:2px solid #00e676}.opt.bad{background:rgba(255,23,68,.18);border-color:#ff1744;outline:2px solid #ff1744}
+.result{overflow:auto}.title{text-align:center;font-size:34px;font-weight:1000;margin:5px 0 18px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.stat{background:#111;border:1px solid #262626;border-radius:11px;padding:12px;text-align:center}.stat span{display:block;color:#aaa;font-size:12px;font-weight:900}.stat b{font-size:23px;display:block;margin-top:4px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.act{padding:11px 14px;border:1px solid #333;background:#111;color:inherit;border-radius:10px;font-weight:900}.review{display:grid;gap:8px}.ri{background:#111;border:1px solid #292929;border-radius:11px;padding:11px}.rq{font-weight:900;margin-bottom:7px}.ans{font-size:14px;line-height:1.45}.goodtxt{color:#00e676}.badtxt{color:#ff1744}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}.modal.show{display:flex}.mb{width:min(900px,100%);max-height:90dvh;overflow:auto;background:#0b0b0b;color:#fff;border:1px solid #333;border-radius:15px;padding:17px}.pw{width:100%;height:50px;background:#050505;color:#fff;border:1px solid #333;border-radius:10px;padding:0 12px}.tablewrap{overflow:auto}.tbl{width:100%;border-collapse:collapse;font-size:12px}.tbl th,.tbl td{border:1px solid #333;padding:7px;white-space:nowrap}.tbl th{background:#151515}.danger{background:#ff1744!important;color:#fff!important}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+@media(max-width:650px){.top{height:54px;min-height:54px;padding:6px 7px}.counter{min-width:88px;font-size:12px;padding:6px}.timer{font-size:17px;padding:3px 9px}.admin{font-size:10px;padding:8px 7px}main{padding:6px}.card{padding:10px;border-radius:11px}.opts{grid-template-columns:1fr;gap:7px}.opt{min-height:50px;font-size:16px;padding:9px}.question{font-size:18px}.next{height:53px}.stats{grid-template-columns:repeat(2,1fr)}.title{font-size:28px}}
+@media(max-height:650px) and (orientation:landscape){.top{height:47px;min-height:47px}.question{font-size:16px;padding:3px}.opt{min-height:40px;padding:6px;font-size:14px}.next{height:43px}}
+@media print{html,body{overflow:visible;background:#fff;color:#111}.top,.modal,.actions{display:none!important}main{padding:0}.card{height:auto;border:0;box-shadow:none}.ri{break-inside:avoid}}
+</style></head><body><div class="app"><header class="top">
+<div class="l"><button class="icon" id="theme">☾</button></div>
+<div class="c"><div class="counter">CORRECT: <span id="live">0</span></div><div class="timer" id="clock">60:00</div></div>
+<div class="r"><button class="admin" id="admin">ADMIN PORTAL</button></div></header><main><div class="screen" id="screen"></div></main></div><div id="fx"></div>
+<div class="modal" id="modal"><div class="mb"><h2>ADMIN PORTAL</h2><div id="login"><input class="pw" id="pw" type="password"><div class="actions"><button class="act" id="loginBtn">LOGIN</button><button class="act" id="close">CLOSE</button></div></div>
+<div id="dash" style="display:none"><div class="actions"><button class="act" id="refresh">REFRESH RESULTS</button><button class="act" id="csv">DOWNLOAD RESULTS CSV</button><button class="act" id="print">PRINT / SAVE PDF REPORT</button><button class="act danger" id="clear">CLEAR ALL RESULTS</button><button class="act" id="logout">LOGOUT</button></div><div class="tablewrap"><table class="tbl"><thead><tr><th>Rank</th><th>Candidate Name</th><th>Score</th><th>Percentage</th><th>Correct</th><th>Incorrect</th><th>Attempted</th><th>Unanswered</th><th>Time Used</th><th>Completed Date/Time</th></tr></thead><tbody id="rows"></tbody></table></div></div></div></div>
 <script>
-const QUESTIONS=[{"orig":1,"text":"A delay in a child's language development is often found to also affect the child's social interactions with peers. This best illustrates which characteristic of development?","options":["Development is holistic; all domains are interconnected","Development is identical in every child","Development stops after adolescence","Development is unrelated to any domain interaction"],"id":1,"answer":"A"},{"orig":2,"text":"Two children of the same age reach the same developmental milestones at different times, even though the overall pattern of development is the same for both. This illustrates:","options":["Individual differences in the rate/pace of development","A developmental disorder in one of the children","Growth, not development","Predictable pattern only, with no individual variation"],"id":2,"answer":"A"},{"orig":3,"text":"A child who already has a schema for \"dog\" encounters a cat for the first time and creates an entirely new schema for it. According to Piaget, this process is called:","options":["Equilibration only","Object permanence","Assimilation","Accommodation"],"id":3,"answer":"D"},{"orig":4,"text":"A teacher notices that a student cannot yet solve a two-step word problem alone but can solve it successfully with a few guiding questions from the teacher. This gap is best described using Vygotsky's concept of:","options":["Object permanence","Equilibration","The Zone of Proximal Development","Conservation"],"id":4,"answer":"C"},{"orig":5,"text":"A person argues that an unjust law should be changed because it violates a broader principle of human dignity, even though the law is not yet officially amended. According to Kohlberg, this reflects:","options":["Stage 1: Obedience and Punishment","Stage 3: Good Interpersonal Relationships","Stage 5: Social Contract and Individual Rights","Stage 4: Maintaining Social Order only"],"id":5,"answer":"C"},{"orig":6,"text":"According to Erikson, an elderly person who looks back on their life with a sense of satisfaction and acceptance has successfully resolved the crisis of:","options":["Integrity vs Despair","Intimacy vs Isolation","Industry vs Inferiority","Generativity vs Stagnation"],"id":6,"answer":"A"},{"orig":7,"text":"J. P. Guilford's Structure of Intellect model is best known in CTET syllabi for introducing which important distinction?","options":["Assimilation vs accommodation","Formative vs summative assessment","Growth vs development","Convergent thinking vs divergent thinking"],"id":7,"answer":"D"},{"orig":8,"text":"A student who has an unusually strong vocabulary and expresses ideas with exceptional clarity in both speech and writing shows particular strength in which of Gardner's intelligences?","options":["Naturalistic","Logical-Mathematical","Linguistic","Spatial"],"id":8,"answer":"C"},{"orig":9,"text":"A test designed to predict how well a student is likely to learn a new skill, such as music, with training is best described as a test of:","options":["Achievement","Aptitude","Personality","Temperament"],"id":9,"answer":"B"},{"orig":10,"text":"A student has high aptitude for mathematics but shows very little interest in mathematics-related activities, preferring art instead. This illustrates the distinction between:","options":["Personality and temperament","Intelligence and IQ","Growth and development","Aptitude and interest"],"id":10,"answer":"D"},{"orig":11,"text":"The Big Five personality traits are commonly remembered using the acronym OCEAN, which includes Openness, Conscientiousness, Extraversion, Agreeableness, and:","options":["Narcissism","Nurturance","Neuroticism","Naturalism"],"id":11,"answer":"C"},{"orig":12,"text":"According to Thomas and Chess, a child with a generally positive mood, regular routines, and who adapts easily to new situations is classified as a(n):","options":["Gifted child","Difficult child","Easy child","Slow-to-warm-up child"],"id":12,"answer":"C"},{"orig":13,"text":"A student who learns best through diagrams, charts, and written material, rather than through listening or hands-on activity, has a preference for which learning style?","options":["Auditory","Visual","Kinesthetic","Convergent"],"id":13,"answer":"B"},{"orig":14,"text":"A student shows persistent difficulty sustaining attention, is easily distracted, and frequently acts impulsively, beyond what is typical for their age. This profile is most consistent with characteristics associated with:","options":["Attention-Deficit/Hyperactivity Disorder (ADHD)","Dyscalculia","Selective mutism","Autism Spectrum Disorder"],"id":14,"answer":"A"},{"orig":15,"text":"A student shows differences in social communication, strongly prefers a fixed daily routine, and becomes distressed by sudden changes. This profile is most consistent with characteristics associated with:","options":["Dysgraphia","Aphasia","ADHD","Autism Spectrum Disorder"],"id":15,"answer":"D"},{"orig":16,"text":"The removal of physical, attitudinal, curricular, and communication obstacles that prevent children with disabilities from fully participating in education is called:","options":["Remedial teaching only","Special education","Barrier-free education","Segregated education"],"id":16,"answer":"C"},{"orig":17,"text":"Assessment in which a student actively monitors and reflects on their own learning progress is called:","options":["Assessment for learning","Assessment of learning","Assessment as learning","Diagnostic assessment only"],"id":17,"answer":"C"},{"orig":18,"text":"A scoring guide that defines specific criteria and descriptive performance levels for evaluating a piece of student work is called a:","options":["Rubric","Anecdotal record","Portfolio","Checklist"],"id":18,"answer":"A"},{"orig":19,"text":"Which of the following tools measures the DEGREE or FREQUENCY of a student behaviour, rather than simply its presence or absence?","options":["Anecdotal record only","A single test score","Checklist","Rating scale"],"id":19,"answer":"D"},{"orig":20,"text":"Reinforcing a desired behaviour every single time it occurs is called:","options":["Extinction","Partial reinforcement","Continuous reinforcement","Negative punishment"],"id":20,"answer":"C"},{"orig":21,"text":"A student who has learned to ride a bicycle finds it easier to later learn how to ride a scooter. This illustrates:","options":["Negative transfer of learning","Positive transfer of learning","Zero transfer of learning","Retroactive interference"],"id":21,"answer":"B"},{"orig":22,"text":"A student who is used to driving on one side of the road finds it initially difficult to adapt to driving on the opposite side in another country. This illustrates:","options":["Negative transfer of learning","Zero transfer of learning","Proactive interference only","Positive transfer of learning"],"id":22,"answer":"A"},{"orig":23,"text":"According to Maslow's hierarchy, which of the following needs must generally be satisfied FIRST, before higher-level needs like self-actualisation can be fully pursued?","options":["Love and belonging needs","Aesthetic needs","Esteem needs","Physiological needs"],"id":23,"answer":"D"},{"orig":24,"text":"Which of the following is generally considered a characteristic of an effective teacher?","options":["Treating all students identically regardless of individual differences","Rigid adherence to a single teaching method regardless of learner needs","Warmth combined with high, consistent expectations for all students","Avoiding any reflection on one's own teaching practice"],"id":24,"answer":"C"},{"orig":25,"text":"A teacher's facial expressions, tone of voice, and body language, which can reinforce or contradict the spoken message, are examples of:","options":["Written communication","Non-verbal communication","Formal assessment","A rubric"],"id":25,"answer":"B"},{"orig":26,"text":"NCF's approach to school education emphasises moving away from rote learning towards:","options":["Constructivist, activity-based, meaningful learning","Only textbook-based lecture","Elimination of all assessment","Only standardised testing"],"id":26,"answer":"A"},{"orig":27,"text":"The growing capacity to manage and appropriately express the intensity of one's feelings is called:","options":["Emotional intelligence testing","Attachment","Emotional expression only","Emotional regulation"],"id":27,"answer":"D"},{"orig":28,"text":"A child combines two words to convey a simple message, such as \"mummy go,\" during early language development. This is characteristic of the:","options":["Formal grammar stage","One-word (holophrastic) stage","Two-word (telegraphic) stage","Babbling stage"],"id":28,"answer":"C"},{"orig":29,"text":"Which of the following is considered a modern agent of socialisation, alongside family, school, community, and peer group?","options":["Genetics","Media","Maturation","Reflex actions"],"id":29,"answer":"B"},{"orig":30,"text":"A teacher appropriately limits discussion of a student's personal disclosure to only those professionals with a legitimate need to know, rather than sharing it widely. This reflects the professional ethics principle of:","options":["Confidentiality","Non-discrimination","Reflective practice","Fairness"],"id":30,"answer":"A"},{"orig":46,"text":"Speaking is best classified as which type of language skill?","options":["Receptive and written","Productive and oral","Receptive and oral","Productive and written"],"id":31,"answer":"B"},{"orig":47,"text":"According to Krashen's Input Hypothesis, language acquisition occurs most effectively through:","options":["Comprehensible input slightly beyond the learner's current level (i+1)","Repeated punishment for errors","Avoiding all listening practice","Explicit grammar instruction alone"],"id":32,"answer":"A"},{"orig":48,"text":"The ability to connect sentences and ideas coherently to produce a unified spoken or written text is called:","options":["Strategic competence","Sociolinguistic competence","Grammatical competence","Discourse competence"],"id":33,"answer":"D"},{"orig":49,"text":"A teacher explains the rule for forming comparative adjectives first, then has students complete practice exercises applying the rule. This reflects the:","options":["Whole language approach","Inductive approach","Deductive approach","Communicative approach only"],"id":34,"answer":"C"},{"orig":50,"text":"A reading approach that begins with meaning and context, using prediction and prior knowledge to make sense of a text, is called the:","options":["Phonics/Bottom-up approach","Whole Language/Top-down approach","Grammar-Translation approach","Confirmation approach"],"id":35,"answer":"B"},{"orig":51,"text":"The stage of the writing process in which a student corrects grammar, spelling, and punctuation in a near-final draft is called:","options":["Revising","Editing","Pre-writing","Drafting"],"id":36,"answer":"B"},{"orig":52,"text":"Knowledge of vocabulary, sentence structure, and pronunciation rules is called:","options":["Strategic competence","Discourse competence","Sociolinguistic competence","Grammatical competence"],"id":37,"answer":"D"},{"orig":53,"text":"A reading approach that begins with decoding individual letters and sounds, building up to whole-word recognition, is called the:","options":["Process approach","Whole Language approach","Phonics/Bottom-up approach","Communicative approach"],"id":38,"answer":"C"},{"orig":54,"text":"A Hindi-speaking learner of English says \"She is having two brothers,\" reflecting a structure common in the learner's home language. This is an example of a(n):","options":["Intralingual error","Interlingual error","Random mistake","Fair test"],"id":39,"answer":"B"},{"orig":55,"text":"A learner says \"I have two mouses\" instead of \"I have two mice,\" applying the regular plural rule to an irregular word. This is an example of a(n):","options":["Intralingual error (overgeneralisation)","Random mistake","Aphasia","Interlingual error"],"id":40,"answer":"A"},{"orig":56,"text":"When teaching poetry, reading the poem ALOUD with appropriate rhythm and expression is considered:","options":["Only useful for very advanced learners","Irrelevant to comprehension","Unnecessary and old-fashioned","Essential, since rhythm and sound are central to a poem's meaning and effect"],"id":41,"answer":"D"},{"orig":57,"text":"Real objects used as teaching materials to make language concrete for young learners are called:","options":["Operational definitions","Realia","Rubrics","Portfolios"],"id":42,"answer":"B"},{"orig":58,"text":"For a young learner struggling with letter-sound correspondence, an appropriate remedial strategy would be:","options":["Skipping phonics entirely and moving straight to complex texts","Structured, multisensory phonics instruction connecting sounds to letters systematically","Ignoring the difficulty since it will resolve on its own","Only silent reading with no explicit instruction"],"id":43,"answer":"B"},{"orig":59,"text":"The Communicative Approach to language teaching primarily prioritises:","options":["Meaningful, genuine communication and fluency","Rote memorisation of isolated vocabulary lists","Silent, individual written drills only","Grammatical perfection over meaning"],"id":44,"answer":"A"},{"orig":60,"text":"A teacher uses a rubric addressing content, organisation, grammar, and vocabulary to assess a student's short story. This reflects:","options":["A purely oral assessment method","An approach unrelated to writing quality","Assessment based only on grammatical accuracy","A comprehensive, multi-criterion approach to assessing writing"],"id":45,"answer":"D"},{"orig":61,"text":"The place value of 6 in the number 26,485 is:","options":["6","60","600","6,000"],"id":46,"answer":"D"},{"orig":62,"text":"What is the sum of 14,562 and 8,379?","options":["22,941","23,941","21,941","22,841"],"id":47,"answer":"A"},{"orig":63,"text":"What is the difference between 15,000 and 8,647?","options":["7,353","6,343","6,353","6,453"],"id":48,"answer":"C"},{"orig":64,"text":"What is the product of 19 and 16?","options":["324","294","304","314"],"id":49,"answer":"C"},{"orig":65,"text":"Divide 216 by 18. The quotient is:","options":["10","11","12","13"],"id":50,"answer":"C"},{"orig":66,"text":"What is the sum of 1/4 and 1/8?","options":["3/8","1/2","2/8","2/12"],"id":51,"answer":"A"},{"orig":67,"text":"What is 3/4 minus 1/4?","options":["3/8","1","1/4","1/2"],"id":52,"answer":"D"},{"orig":68,"text":"What is 1/2 expressed as a percentage?","options":["12.5%","25%","50%","75%"],"id":53,"answer":"C"},{"orig":69,"text":"The Highest Common Factor (HCF) of 12 and 18 is:","options":["3","6","9","12"],"id":54,"answer":"B"},{"orig":70,"text":"A triangle with one angle exactly equal to 90° is called a:","options":["Isosceles triangle","Right-angled triangle","Obtuse triangle","Equilateral triangle"],"id":55,"answer":"B"},{"orig":71,"text":"The distance from the centre of a circle to any point on its boundary is called the:","options":["Circumference","Chord","Diameter","Radius"],"id":56,"answer":"D"},{"orig":72,"text":"How many flat faces does a cylinder have?","options":["3","0","1","2"],"id":57,"answer":"D"},{"orig":73,"text":"An angle that measures exactly 180° is called a(n):","options":["Right angle","Obtuse angle","Reflex angle","Straight angle"],"id":58,"answer":"D"},{"orig":74,"text":"1 tonne is equal to how many kilograms?","options":["100","1,000","10,000","10"],"id":59,"answer":"B"},{"orig":75,"text":"1 square metre is equal to how many square centimetres?","options":["10,000","100,000","100","1,000"],"id":60,"answer":"A"},{"orig":76,"text":"A regular (non-leap) year has how many days?","options":["366","360","364","365"],"id":61,"answer":"D"},{"orig":77,"text":"What comes next in the pattern of odd numbers: 1, 3, 5, 7, __?","options":["8","9","10","11"],"id":62,"answer":"B"},{"orig":78,"text":"A line graph is generally most appropriate for showing:","options":["Only a single fixed number with no comparison","Only categorical data with no order","Only three-dimensional shapes","A trend or change in data over time"],"id":63,"answer":"D"},{"orig":79,"text":"The volume of a cube with side 4 cm is:","options":["48 cubic cm","64 cubic cm","12 cubic cm","16 cubic cm"],"id":64,"answer":"B"},{"orig":80,"text":"Which of the following is an even number?","options":["53","27","35","48"],"id":65,"answer":"D"},{"orig":81,"text":"Pólya's FOURTH and final step in problem-solving, after carrying out the plan, is to:","options":["Understand the problem","Devise a plan","Look back and review the solution","Restate the original question only"],"id":66,"answer":"C"},{"orig":82,"text":"The 'Concrete' stage of the CPA (Concrete-Pictorial-Abstract) progression involves:","options":["Only drawings and diagrams","Only numerals and symbolic equations","Verbal explanation with no materials at all","Physical manipulation of real objects"],"id":67,"answer":"D"},{"orig":83,"text":"A teacher presents students with an unfamiliar problem requiring them to combine and adapt several previously separate strategies in a new way. This is best classified as a:","options":["Operational definition","Fair test","Routine problem","Non-routine problem"],"id":68,"answer":"D"},{"orig":84,"text":"A student believes that the fraction 1/8 is larger than 1/4, reasoning simply that 8 is a bigger number than 4. This belief reflects a:","options":["Correct understanding","Careless error","Conceptual error","Procedural error"],"id":69,"answer":"C"},{"orig":85,"text":"A student understands the concept of column subtraction with borrowing but makes a mistake while carrying out one of the borrowing steps. This is best classified as a:","options":["Conceptual error","Procedural error","A correct calculation","An assessment tool"],"id":70,"answer":"B"},{"orig":86,"text":"Geoboards and fraction bars used to help students physically explore geometric and fractional concepts are examples of mathematics:","options":["Teaching aids/manipulatives","Non-routine problems","Operational definitions","Summative tests"],"id":71,"answer":"A"},{"orig":87,"text":"A Mathematics Laboratory is generally most effective when its activities are:","options":["Used only once a year as an occasional treat","Avoided in favour of textbook-only instruction","Completely unstructured, with no link to the curriculum","Purposefully linked to specific curricular concepts, followed by reflection"],"id":72,"answer":"D"},{"orig":88,"text":"A teacher keeps a folder of a student's mathematics work samples across the year, showing growth in problem-solving. This assessment tool is called a:","options":["Fair test","Checklist","Portfolio","Rating scale only"],"id":73,"answer":"C"},{"orig":89,"text":"One of the objectives of teaching mathematics, beyond computation, is to help students recognise patterns and symmetry, reflecting mathematics':","options":["Aesthetic appreciation","Irrelevance to daily life","Complete disconnection from reasoning","Purely mechanical nature"],"id":74,"answer":"A"},{"orig":90,"text":"A student solves word problems correctly when the word \"altogether\" appears (assuming it always means addition), but fails when a structurally similar problem uses different wording. This illustrates a risk of:","options":["Over-reliance on superficial key words rather than understanding problem structure","Excellent problem-solving ability","The Look Back step of Pólya's method","Genuine conceptual understanding"],"id":75,"answer":"A"},{"orig":91,"text":"Which part of the plant transports water and nutrients between the roots and the leaves?","options":["Flower","Stem","Seed","Petal"],"id":76,"answer":"B"},{"orig":92,"text":"The green pigment in plant leaves that captures sunlight for photosynthesis is called:","options":["Chitin","Cellulose","Keratin","Chlorophyll"],"id":77,"answer":"D"},{"orig":93,"text":"A butterfly is classified as an insect mainly because it has:","options":["A backbone and fur","Gills for breathing underwater","Four legs and no wings","Six legs and a body divided into three parts"],"id":78,"answer":"D"},{"orig":94,"text":"Fish are able to breathe underwater mainly with the help of their:","options":["Fins only","Lungs","Gills","Skin only"],"id":79,"answer":"C"},{"orig":95,"text":"Which Indian state is especially well known for large-scale tea cultivation?","options":["Rajasthan","Assam","Punjab","Gujarat"],"id":80,"answer":"B"},{"orig":96,"text":"Resources such as solar and wind energy are considered important to use more widely mainly because they are:","options":["Renewable and do not run out with use","Harmful to the environment","Available only in a few countries","Non-renewable and limited"],"id":81,"answer":"A"},{"orig":97,"text":"Tiny water droplets in the air come together to form clouds mainly through the process of:","options":["Germination","Respiration","Evaporation","Condensation"],"id":82,"answer":"D"},{"orig":98,"text":"Which of the following is the longest river in India?","options":["Narmada","Yamuna","Godavari","Ganga"],"id":83,"answer":"D"},{"orig":99,"text":"A clock is an instrument primarily used to measure:","options":["Weight","Temperature","Time","Distance"],"id":84,"answer":"C"},{"orig":100,"text":"Milk and milk products are generally considered a good source of which nutrient, important for strong bones?","options":["Calcium","Only sugar","Only fibre","Vitamin C only"],"id":85,"answer":"A"},{"orig":101,"text":"The sense organ primarily responsible for hearing sounds is the:","options":["Nose","Tongue","Eye","Ear"],"id":86,"answer":"D"},{"orig":102,"text":"An igloo, built from blocks of packed snow, is a traditional shelter used in which type of region?","options":["Coastal plain regions","Hot desert regions","Extremely cold, snowy regions","Tropical rainforest regions"],"id":87,"answer":"C"},{"orig":103,"text":"Which of the following is an example of a means of communication?","options":["Bicycle","Newspaper","Train","Boat"],"id":88,"answer":"B"},{"orig":104,"text":"Plastic bags and bottles are examples of waste that is:","options":["Non-biodegradable","Always recycled immediately","Edible for animals","Biodegradable"],"id":89,"answer":"A"},{"orig":105,"text":"Which of the following is a beneficial role played by certain microorganisms in nature?","options":["They have no role in the environment","They can only be found in laboratories","They always cause disease","They decompose dead plant and animal matter, enriching the soil"],"id":90,"answer":"D"},{"orig":106,"text":"The organ that controls and coordinates most functions of the human body, including thought and movement, is the:","options":["Stomach","Heart","Brain","Liver"],"id":91,"answer":"C"},{"orig":107,"text":"A rain gauge is an instrument specifically used to measure:","options":["Temperature","Wind speed","The amount of rainfall","Air pressure"],"id":92,"answer":"C"},{"orig":108,"text":"A narrow strip of low, flat land found along a coastline is generally called a:","options":["Coastal plain","Mountain range","Desert","Plateau"],"id":93,"answer":"A"},{"orig":109,"text":"Which of the following correctly completes the food chain: Leaves → Caterpillar → __?","options":["Sun","Soil","Bird","Tree"],"id":94,"answer":"C"},{"orig":110,"text":"The process by which pollen is transferred from one flower to another, enabling reproduction in plants, is called:","options":["Respiration","Germination","Pollination","Transpiration"],"id":95,"answer":"C"},{"orig":111,"text":"Which of the following best reflects a GENUINELY integrated approach to teaching the theme \"Water\" in EVS?","options":["Teaching only about the water cycle, in complete isolation","Exploring where local water comes from, who manages it, and water-related festivals, within one\nconnected unit","Teaching only a list of water-related vocabulary words","Avoiding any discussion of water's social or cultural importance"],"id":96,"answer":"B"},{"orig":112,"text":"NCF's Position Paper on EVS recommends teaching methods that move away from:","options":["Rote memorisation disconnected from a child's real experience","Connecting content to the child's own environment","Developing observation and inquiry skills","Activity-based, hands-on exploration"],"id":97,"answer":"A"},{"orig":113,"text":"A statement such as \"this flower has five petals\" is best classified as a(n):","options":["Misconception","Field visit stage","Inference","Observation"],"id":98,"answer":"D"},{"orig":114,"text":"A statement such as \"this flower was probably pollinated recently, since bees are still visiting it\" is best classified as a(n):","options":["A theme","Observation only","Inference","A field visit"],"id":99,"answer":"C"},{"orig":115,"text":"The stage of a field visit in which students carry out structured, purposeful observation guided by pre-established objectives is called:","options":["Pre-visit preparation","The visit itself","Post-visit follow-up","Diagnostic assessment"],"id":100,"answer":"B"},{"orig":116,"text":"Which of the following best reflects the \"knowledge\" dimension of environmental awareness?","options":["Understanding facts about environmental systems, such as the water cycle","Participating in a recycling drive","Having a positive attitude toward the environment, with no factual content","Feeling a personal connection to nature"],"id":101,"answer":"A"},{"orig":117,"text":"A teacher assigns a project in which students conduct a simple survey of waste disposal practices in their local area and present recommendations. This activity best illustrates:","options":["A summative test only","A common misconception","A purely laboratory-based Science activity","The Project Method applied to EVS"],"id":102,"answer":"D"},{"orig":118,"text":"A child believes that \"all microorganisms are germs that make people sick.\" This belief is best described as a:","options":["An inference","Scientifically accurate fact","Common misconception/alternative conception","A field visit stage"],"id":103,"answer":"C"},{"orig":119,"text":"Before correcting a misconception, an effective EVS teacher should first:","options":["Assume the student has no prior beliefs on the topic","Elicit and understand the student's existing beliefs through diagnostic assessment","Ignore the student's current understanding entirely","Immediately move to a written test"],"id":104,"answer":"B"},{"orig":120,"text":"An EVS assessment question that asks students to apply a concept, such as the water cycle, to explain a new, real-life scenario reflects:","options":["Application-based assessment, going beyond simple recall","Only attendance tracking","Only spelling accuracy","Only rote factual recall"],"id":105,"answer":"A"}];
-const DURATION=60*60;
-const ADMIN_PASSWORD="Bikash@420";
-const RESULTS_KEY="ctet_mock_2026_set4_results_v1";
-const CENTRAL_SCOREBOARD_URL="https://script.google.com/macros/s/AKfycbyVa34v4bCORe1JUz9_jQFWgAHueqsL1axwgnPOSkeWPeLemIFFkg3EZyV2GJLpnZyuLg/exec";
-const CENTRAL_API_TOKEN="CTET_SCOREBOARD_2026_BIKAS_420";
-const TEST_ID="MOCK-04-SET4";
-
-let candidate="",idx=0,answers={},startAt=0,timerHandle=null,submitted=false;
-const $=id=>document.getElementById(id);
-const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-const letter=i=>String.fromCharCode(65+i);
-const answerIndex=L=>L.charCodeAt(0)-65;
-
-function getResults(){try{return JSON.parse(localStorage.getItem(RESULTS_KEY)||"[]")}catch(e){return[]}}
-function saveResults(a){localStorage.setItem(RESULTS_KEY,JSON.stringify(a))}
-
-function submitToCentralScoreboard(r){
-  const status=$("centralStatus");
-  if(status){status.textContent="CENTRAL SCOREBOARD: SENDING RESULT…";status.style.color="var(--green)";}
-  const payload={
-    token:CENTRAL_API_TOKEN,testId:TEST_ID,candidateName:String(r.candidate||"").trim(),
-    candidate:String(r.candidate||"").trim(),score:Number(r.score)||0,percentage:Number(r.percentage)||0,
-    timeUsed:Number(r.timeUsed)||0,correct:Number(r.correct)||0,incorrect:Number(r.incorrect)||0,
-    attempted:Number(r.attempted)||0,unanswered:Number(r.unanswered)||0,
-    submissionId:String(r.id||""),date:r.completedAt
-  };
-  const body=JSON.stringify(payload);
-  try{
-    return fetch(CENTRAL_SCOREBOARD_URL,{
-      method:"POST",mode:"no-cors",redirect:"follow",credentials:"omit",
-      headers:{"Content-Type":"text/plain;charset=UTF-8"},
-      body,keepalive:true
-    }).then(()=>{
-      if(status){
-        status.textContent="CENTRAL SCOREBOARD: SUBMISSION SENT";
-        status.style.color="var(--green)";
-      }
-    }).catch(()=>{
-      try{
-        if(navigator.sendBeacon){
-          navigator.sendBeacon(CENTRAL_SCOREBOARD_URL,new Blob([body],{type:"text/plain;charset=UTF-8"}));
-          if(status){
-            status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";
-            status.style.color="var(--green)";
-          }
-        }else if(status){
-          status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
-          status.style.color="var(--red)";
-        }
-      }catch(e){
-        if(status){
-          status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
-          status.style.color="var(--red)";
-        }
-      }
-    });
-  }catch(e){
-    try{
-      if(navigator.sendBeacon){
-        navigator.sendBeacon(CENTRAL_SCOREBOARD_URL,new Blob([body],{type:"text/plain;charset=UTF-8"}));
-        if(status){
-          status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";
-          status.style.color="var(--green)";
-        }
-      }
-    }catch(err){}
-    return Promise.resolve();
-  }
-}
-
-let audioCtx=null;
-function ensureAudio(){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;if(!audioCtx)audioCtx=new C();if(audioCtx.state==="suspended")audioCtx.resume();return audioCtx}catch(e){return null}}
-
-function beep(correct){
-  const c=ensureAudio();if(!c)return;
-  const now=c.currentTime;
-  const tones=correct?[523.25,659.25,783.99,1046.5,1318.51]:[220,174.61,146.83,110,82.41];
-  const type=correct?"sine":"square";
-  tones.forEach((f,i)=>{
-    const o=c.createOscillator(),g=c.createGain();
-    const t=now+i*(correct?.07:.075);
-    o.type=type;o.frequency.setValueAtTime(f,t);
-    g.gain.setValueAtTime(.0001,t);
-    g.gain.exponentialRampToValueAtTime(1.0,t+.012);
-    g.gain.exponentialRampToValueAtTime(.0001,t+(correct?.25:.30));
-    o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+(correct?.27:.32));
-  });
-}
-
-function fireworks(good){
-  const canvas=$("fx"),ctx=canvas.getContext("2d");
-  const dpr=Math.min(devicePixelRatio||1,2);
-  canvas.width=innerWidth*dpr;canvas.height=innerHeight*dpr;
-  ctx.setTransform(dpr,0,0,dpr,0,0);
-  const cx=innerWidth/2,cy=innerHeight*.48;
-  const particles=[];
-  const count=190;
-  for(let i=0;i<count;i++){
-    const a=Math.PI*2*i/count+(Math.random()-.5)*.045;
-    const ring=i%3;
-    const speed=(ring===0?3.4:ring===1?4.8:6.0)+Math.random()*1.8;
-    particles.push({
-      x:cx,y:cy,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,
-      life:55+Math.random()*30,size:1.4+Math.random()*2.4,
-      delay:Math.random()*5
-    });
-  }
-  let frame=0;
-  function draw(){
-    ctx.clearRect(0,0,innerWidth,innerHeight);
-    particles.forEach(p=>{
-      if(frame<p.delay)return;
-      p.x+=p.vx;p.y+=p.vy;p.vy+=.055;p.vx*=.994;p.vy*=.994;p.life--;
-      if(p.life>0){
-        ctx.globalAlpha=Math.min(1,p.life/22);
-        ctx.fillStyle=good?"#18e76b":"#ff3152";
-        ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
-      }
-    });
-    ctx.globalAlpha=1;
-    if(frame++<92)requestAnimationFrame(draw);else ctx.clearRect(0,0,innerWidth,innerHeight);
-  }
-  draw();
-}
-
-function formatTime(sec){sec=Math.max(0,Math.floor(sec));return String(Math.floor(sec/60)).padStart(2,"0")+":"+String(sec%60).padStart(2,"0")}
-
-function sectionFor(q){
-  const o=q.orig;
-  if(o<=30)return "CHILD DEVELOPMENT & PEDAGOGY";
-  if(o<=60)return "LANGUAGE I — ENGLISH";
-  if(o<=90)return "MATHEMATICS";
-  return "ENVIRONMENTAL STUDIES";
-}
-
-function render(){
-  const q=QUESTIONS[idx],a=answers[q.id]||"";
-  $("progress").textContent=`Question ${idx+1} of ${QUESTIONS.length}`;
-  $("sectionLabel").textContent=sectionFor(q);
-  const fb=a?(a===q.answer?`✓ CORRECT`:`✕ WRONG — Correct answer: ${q.answer}`):"";
-  $("qcard").innerHTML=`
-    <div class="qnum">Q${q.id}</div>
-    <div class="question">${esc(q.text)}</div>
-    <div class="options">${q.options.map((o,i)=>{
-      const L=letter(i);
-      let cls="opt";
-      if(a===L)cls+=" selected";
-      if(a){if(q.answer===L)cls+=" correct";else if(a===L)cls+=" wrong"}
-      return `<button type="button" class="${cls}" data-opt="${L}" ${a?"disabled":""}>
-        <span class="letter">${L}.</span><span>${esc(o)}</span></button>`;
-    }).join("")}</div>
-    <div class="feedback ${a?(a===q.answer?"ok":"bad"):""}">${fb}</div>
-    <div class="actions"><button id="nextBtn" class="next" type="button" ${a?"":"disabled"}>${idx===QUESTIONS.length-1?"FINISH":"NEXT"}</button></div>`;
-  $("qcard").querySelectorAll("[data-opt]").forEach(el=>el.onclick=()=>choose(el.dataset.opt));
-  $("nextBtn").onclick=()=>{if(idx<QUESTIONS.length-1){idx++;render()}else submitExam()};
-  $("correctBtn").textContent=`CORRECT: ${countCorrectLive()}`;
-}
-
-function countCorrectLive(){let n=0;QUESTIONS.forEach(q=>{if(answers[q.id]===q.answer)n++});return n}
-
-function choose(L){
-  if(submitted)return;
-  const q=QUESTIONS[idx];if(answers[q.id])return;
-  answers[q.id]=L;
-  const ok=L===q.answer;
-  beep(ok);fireworks(ok);
-  render();
-}
-
-function startExam(){
-  const n=$("candidate").value.trim();
-  if(!n){$("candidate").focus();return}
-  ensureAudio();
-  candidate=n;idx=0;answers={};submitted=false;startAt=Date.now();
-  $("start").classList.add("hidden");$("result").classList.add("hidden");$("admin").classList.add("hidden");$("exam").classList.remove("hidden");
-  render();timerHandle=setInterval(tick,250);tick();
-}
-
-function tick(){
-  const used=Math.floor((Date.now()-startAt)/1000),left=DURATION-used;
-  $("timer").textContent=formatTime(left);$("timer").classList.toggle("warn",left<=300);
-  if(left<=0 && !submitted)submitExam();
-}
-
-function submitExam(){
-  if(submitted)return;submitted=true;clearInterval(timerHandle);
-  const used=Math.min(DURATION,Math.floor((Date.now()-startAt)/1000));
-  let correct=0,attempted=0;
-  QUESTIONS.forEach(q=>{if(answers[q.id]){attempted++;if(answers[q.id]===q.answer)correct++}});
-  const incorrect=attempted-correct,unanswered=QUESTIONS.length-attempted;
-  const result={
-    id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),
-    candidate,score:correct,percentage:correct/QUESTIONS.length*100,correct,incorrect,attempted,unanswered,
-    timeUsed:used,completedAt:new Date().toISOString(),answers:{...answers}
-  };
-  const arr=getResults();arr.push(result);saveResults(arr);
-  showResult(result);submitToCentralScoreboard(result);
-}
-
-function showResult(r){
-  $("exam").classList.add("hidden");$("result").classList.remove("hidden");
-  const rows=QUESTIONS.map(q=>{
-    const a=r.answers[q.id]||"",ok=a===q.answer;
-    const your=a?`${a}. ${q.options[answerIndex(a)]}`:"Unanswered";
-    const correct=`${q.answer}. ${q.options[answerIndex(q.answer)]}`;
-    return `<div class="reviewRow"><div class="reviewQ">Q${q.id}. ${esc(q.text)}</div>
-      <div class="reviewA">Candidate's Answer: <b>${esc(your)}</b> · Correct Answer: <b>${esc(correct)}</b>
-      <span class="tag ${!a?"skip":ok?"ok":"bad"}">${!a?"UNANSWERED":ok?"CORRECT":"WRONG"}</span></div></div>`;
-  }).join("");
-  $("result").innerHTML=`<div class="resultCard">
-    <h1 class="resultTitle">MOCK TEST RESULT</h1>
-    <div class="candidate">${esc(r.candidate)}</div>
-    <div class="stats">
-      <div class="stat"><small>Total Questions</small><strong>${QUESTIONS.length}</strong></div>
-      <div class="stat"><small>Attempted</small><strong>${r.attempted}</strong></div>
-      <div class="stat"><small>Correct</small><strong>${r.correct}</strong></div>
-      <div class="stat"><small>Incorrect</small><strong>${r.incorrect}</strong></div>
-      <div class="stat"><small>Unanswered</small><strong>${r.unanswered}</strong></div>
-      <div class="stat"><small>Score</small><strong>${r.score}</strong></div>
-      <div class="stat"><small>Percentage</small><strong>${r.percentage.toFixed(2)}%</strong></div>
-      <div class="stat"><small>Time Used</small><strong>${formatTime(r.timeUsed)}</strong></div>
-    </div>
-    <div id="centralStatus" class="status">CENTRAL SCOREBOARD: SENDING RESULT…</div>
-    <div class="resultActions">
-      <button onclick="window.print()">PRINT / SAVE PDF</button>
-      <button onclick="location.reload()">BACK TO START</button>
-      <button onclick="adminLogin()">ADMIN PORTAL</button>
-    </div>
-    <div class="review"><h3>ANSWER REVIEW</h3>${rows}</div>
-  </div>`;
-}
-
-function adminLogin(){
-  const p=prompt("Admin Password");
-  if(p!==ADMIN_PASSWORD){alert("Incorrect password.");return}
-  $("start").classList.add("hidden");$("exam").classList.add("hidden");$("result").classList.add("hidden");$("admin").classList.remove("hidden");
-  $("timer").textContent="60:00";$("correctBtn").textContent="CORRECT: 0";renderAdmin();
-}
-
-function rankResults(rs){
-  return rs.slice().sort((a,b)=>b.score-a.score||a.timeUsed-b.timeUsed||new Date(a.completedAt)-new Date(b.completedAt));
-}
-
-function renderAdmin(){
-  const rs=rankResults(getResults()),wrap=$("adminTable");
-  if(!rs.length){wrap.innerHTML='<div class="empty">No saved candidate results.</div>';return}
-  wrap.innerHTML=`<div class="tableWrap"><table><thead><tr>
-    <th>Rank</th><th>Candidate Name</th><th>Score</th><th>Percentage</th><th>Correct</th><th>Incorrect</th><th>Attempted</th><th>Unanswered</th><th>Time Used</th><th>Completed Date/Time</th>
-  </tr></thead><tbody>${rs.map((r,i)=>{
-    const d=new Date(r.completedAt);
-    return `<tr><td>${i+1}</td><td>${esc(r.candidate)}</td><td>${r.score}</td><td>${r.percentage.toFixed(2)}%</td><td>${r.correct}</td><td>${r.incorrect}</td><td>${r.attempted}</td><td>${r.unanswered}</td><td>${formatTime(r.timeUsed)}</td><td>${d.toLocaleString()}</td></tr>`;
-  }).join("")}</tbody></table></div>`;
-}
-
-function downloadCSV(){
-  const rs=rankResults(getResults());
-  const head=["Rank","Candidate Name","Score","Time used","Percentage","Completed Date/Time"];
-  const lines=[head,...rs.map((r,i)=>[i+1,r.candidate,r.score,formatTime(r.timeUsed),r.percentage.toFixed(2)+"%",new Date(r.completedAt).toLocaleString()])];
-  const txt="\uFEFF"+lines.map(row=>row.map(v=>`"${String(v).replaceAll('"','""')}"`).join(",")).join("\r\n");
-  const blob=new Blob([txt],{type:"text/csv;charset=utf-8"});
-  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="CTET_Set4_Results.csv";a.click();
-  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
-}
-
-function toggleTheme(){
-  document.body.classList.toggle("light");
-  localStorage.setItem("ctet_mock_theme",document.body.classList.contains("light")?"light":"dark");
-  $("themeBtn").textContent=document.body.classList.contains("light")?"☾ DARK":"☀ THEME";
-}
-function loadTheme(){
-  const light=localStorage.getItem("ctet_mock_theme")==="light";
-  document.body.classList.toggle("light",light);$("themeBtn").textContent=light?"☾ DARK":"☀ THEME";
-}
-
-$("startBtn").onclick=startExam;
-$("candidate").addEventListener("keydown",e=>{if(e.key==="Enter")startExam()});
-$("themeBtn").onclick=toggleTheme;
-$("adminBtn").onclick=adminLogin;
-$("refreshAdmin").onclick=renderAdmin;
-$("csvAdmin").onclick=downloadCSV;
-$("printAdmin").onclick=()=>window.print();
-$("clearAdmin").onclick=()=>{
-  if(confirm("Are you sure you want to delete all candidate results?")){localStorage.removeItem(RESULTS_KEY);renderAdmin()}
-};
-loadTheme();
-</script>
-</body>
-</html>
+const Q=[{"id":1,"originalNumber":1,"q":"Freud's psychosexual stage occurring approximately in the first year of life, centred on the mouth, is called the:","options":["Anal stage m","Oral stage","Phallic stage","Latency stage"],"answer":1},{"id":2,"originalNumber":2,"q":"According to Bandura, a student's belief in their own capability to successfully complete a specific sa task is called:","options":["Self-efficacy","Self-regulation","Self-esteem only","Self-actualisation"],"answer":0},{"id":3,"originalNumber":3,"q":"A student who works well in group settings, understands others' feelings, and resolves conflicts as among classmates shows particular strength in which of Gardner's intelligences?","options":["Naturalistic","Logical-Mathematical","Intrapersonal","Interpersonal"],"answer":3},{"id":4,"originalNumber":4,"q":"A student who easily recognises and classifies different plants, animals, and natural patterns shows particular strength in which of Gardner's intelligences?","options":["Linguistic","Naturalistic","Musical","Spatial"],"answer":1},{"id":5,"originalNumber":5,"q":"Which of the following was the first practical intelligence test, developed in France and later revised in the United States as the Stanford-Binet Scale?","options":["Wechsler Scale","Binet-Simon Scale","Torrance Test assamwork | CTET Mock Test - 2026 | SET - 5 2","Army Alpha Test"],"answer":1},{"id":6,"originalNumber":6,"q":"David Wechsler's intelligence scales use which method, comparing an individual's score statistically to same-age peers, rather than a simple MA/CA ratio?","options":["The deviation IQ method","The operational definition method","The fair test method","The g-factor method"],"answer":0},{"id":7,"originalNumber":7,"q":"According to Torrance, the component of creativity referring to the NUMBER of relevant ideas a person generates is called:","options":["Originality","Elaboration","Flexibility","Fluency"],"answer":3},{"id":8,"originalNumber":8,"q":"According to Torrance, the component of creativity referring to the UNIQUENESS or rarity of an idea is called: k","options":["Elaboration","Fluency","Flexibility or","Originality"],"answer":3},{"id":9,"originalNumber":9,"q":"A specific learning disability that primarily affects a child's number sense and mathematical reasoning, despite average intelligence, is called:","options":["Dyslexia","Dysgraphia w","Dyscalculia","Aphasia"],"answer":2},{"id":10,"originalNumber":10,"q":"Kilpatrick classified projects into constructive, aesthetic, problem-solving, and which fourth type?","options":["Drill/practice project m","Summative project","Confirmation project","Diagnostic project"],"answer":0},{"id":11,"originalNumber":11,"q":"Bruner's \"enactive\" mode of representing knowledge refers to learning primarily through: sa","options":["Physical action and direct manipulation of objects","Silent reading alone","Abstract symbols and language","Pictures and images"],"answer":0},{"id":12,"originalNumber":12,"q":"A classroom management style combining clear, consistent structure with warmth and genuine student participation is called: as","options":["Segregated","Authoritarian","Permissive","Authoritative/Democratic"],"answer":3},{"id":13,"originalNumber":13,"q":"Effective classroom time management includes minimising wasted transition time between activities through:","options":["Unclear, ad hoc routines","Clear, well-established, consistent routines","Avoiding all activity-based learning","Longer, unplanned breaks"],"answer":1},{"id":14,"originalNumber":14,"q":"The ability to objectively analyse, evaluate, and synthesise information before forming a reasoned judgment is called:","options":["Critical thinking","Classical conditioning","Object permanence","Rote memorisation assamwork | CTET Mock Test - 2026 | SET - 5 3"],"answer":0},{"id":15,"originalNumber":15,"q":"Selecting a course of action from among multiple available alternatives, after weighing evidence and consequences, is called:","options":["Assimilation","Equilibration","Problem-solving only","Decision making"],"answer":3},{"id":16,"originalNumber":16,"q":"According to Goleman, using emotions to pursue goals with energy, persistence, and optimism is called:","options":["Self-Awareness","Empathy","Motivation","Social Skills"],"answer":2},{"id":17,"originalNumber":17,"q":"According to Goleman, effectively managing relationships through communication, cooperation, and conflict resolution is called:","options":["Self-Regulation k","Motivation","Social Skills","Empathy or"],"answer":2},{"id":18,"originalNumber":18,"q":"The Rights of Persons with Disabilities (RPWD) Act, 2016, extends the right to free education for children with benchmark disabilities up to what age?","options":["16 years","18 years","21 years w","14 years"],"answer":1},{"id":19,"originalNumber":19,"q":"NEP 2020 recommends that the medium of instruction, where possible, be the child's home language through at least which grade?","options":["Grade 10 m","Grade 12","Grade 1","Grade 5, preferably Grade 8"],"answer":3},{"id":20,"originalNumber":20,"q":"Guidance that helps students explore career options, aptitudes, and interests relevant to future pathways is called: sa","options":["Counselling only","Personal-social guidance","Vocational/career guidance","Remedial teaching"],"answer":2},{"id":21,"originalNumber":21,"q":"Treating all students equitably, regardless of gender, disability, or socio-economic background, is a core principle of a teacher's: as","options":["Classroom management style only","Professional ethics","Reflection-in-action only","Discourse competence"],"answer":1},{"id":22,"originalNumber":22,"q":"According to Erikson's theory of psychosocial development, how many stages span the entire human lifespan?","options":["Six","Eight","Ten","Four"],"answer":1},{"id":23,"originalNumber":23,"q":"According to Kohlberg's theory, moral reasoning develops across how many broad levels?","options":["Four","Five","Two","Three assamwork | CTET Mock Test - 2026 | SET - 5 4"],"answer":3},{"id":24,"originalNumber":24,"q":"Which of the following correctly lists Piaget's four cognitive stages in developmental order?","options":["Concrete Operational, Sensorimotor, Preoperational, Formal Operational","Formal Operational, Concrete Operational, Preoperational, Sensorimotor","Sensorimotor, Preoperational, Concrete Operational, Formal Operational","Preoperational, Sensorimotor, Formal Operational, Concrete Operational"],"answer":2},{"id":25,"originalNumber":25,"q":"Vygotsky's broader theoretical framework, emphasising that cognitive development is shaped by social interaction and cultural tools, is generally known as:","options":["Behaviourism","Sociocultural theory","Psychoanalysis","Trial and error theory"],"answer":1},{"id":26,"originalNumber":26,"q":"NCF envisions school education as aiming for the all-round development of the child, extending beyond only:","options":["Academic/cognitive achievement alone","Emotional development k","Social development","Physical development"],"answer":0},{"id":27,"originalNumber":27,"q":"A teacher who proactively establishes clear routines and an engaging classroom environment to or prevent misbehaviour before it occurs is practising:","options":["Corporal punishment","Summative evaluation","Corrective discipline","Preventive discipline w"],"answer":3},{"id":28,"originalNumber":28,"q":"Corporal punishment and mental harassment of children in Indian schools are:","options":["Unrelated to any educational policy","Encouraged for effective discipline","Prohibited under the RTE Act m","Required for classroom management"],"answer":2},{"id":29,"originalNumber":29,"q":"A teacher unconsciously provides more encouragement and challenging tasks to a student she believes has high potential, and the student's performance subsequently improves. This scenario illustrates:","options":["Formative assessment sa","The Pygmalion Effect (self-fulfilling prophecy)","Negative transfer","The Law of Readiness"],"answer":1},{"id":30,"originalNumber":30,"q":"Under CCE, \"co-scholastic\" areas of evaluation include which of the following?","options":["Life skills, attitudes, values, and participation in arts/physical education","Only the final annual examination as","Only reading comprehension scores","Only mathematics and science test scores Section 2: Language I (English) (Q. 31-60) Read the passage carefully and answer the questions that follow (Q. 31-40): Every year, Nandini's grandmother told the same story about the great flood that had struck their village decades ago. This year, Nandini's teacher assigned a project on family history, and Nandini decided to finally write down her grandmother's story properly, word for word, instead of just half-listening as she usually did. Sitting beside her grandmother with a notebook, Nandini asked careful questions: When exactly did the flood happen? How high did the water rise? What did the family do to stay safe? Her assamwork | CTET Mock Test - 2026 | SET - 5 5 grandmother's eyes lit up as she described how the entire village had gathered on the roof of the old temple, sharing whatever food they had, until the water finally receded after three days. As Nandini wrote, she realised her grandmother's story was not just about a flood, but about how the villagers had supported one another during a crisis. When she presented her project to the class, several classmates said they wanted to interview their own grandparents too. Nandini's teacher smiled and said that history often lived not in textbooks alone, but in the memories of the people around them."],"answer":0},{"id":31,"originalNumber":46,"q":"A language acquired naturally and first, typically at home before formal schooling, is called a child's:","options":["Second Language (L2)","First Language (L1)","Foreign language assamwork | CTET Mock Test - 2026 | SET - 5 7","Target language only"],"answer":1},{"id":32,"originalNumber":47,"q":"Any additional language learned after the first language is already established is called a:","options":["Second Language (L2)","Mother tongue","Native language","First Language (L1)"],"answer":0},{"id":33,"originalNumber":48,"q":"Krashen's Affective Filter Hypothesis proposes that language acquisition is facilitated by:","options":["Constant, harsh error correction","Avoiding all listening and speaking practice","A high-pressure, high-anxiety classroom environment","A low-anxiety, emotionally supportive environment"],"answer":3},{"id":34,"originalNumber":49,"q":"In the standard prose-teaching sequence, the stage involving discussion, comprehension questions, and response activities after reading is called:","options":["Evaluation only","Pre-Reading k","While-Reading","Post-Reading or"],"answer":3},{"id":35,"originalNumber":50,"q":"Communicative competence, as a goal of language teaching, includes grammatical, sociolinguistic, discourse, and which fourth component?","options":["Aesthetic competence","Strategic competence","Mathematical competence","Spatial competence w"],"answer":1},{"id":36,"originalNumber":51,"q":"A systematic deviation reflecting a genuine, consistent gap in a learner's language competence is called a(n):","options":["Error m","Fair test","Operational definition","Mistake"],"answer":0},{"id":37,"originalNumber":52,"q":"A student reads a menu quickly just to find the price of one specific dish. This is an example of:","options":["Predicting sa","Summarising","Skimming","Scanning"],"answer":3},{"id":38,"originalNumber":53,"q":"A student reads the first and last paragraphs of an article quickly to decide if it is relevant before reading it fully. This is an example of:","options":["Monitoring as","Scanning","Skimming","Visualising"],"answer":2},{"id":39,"originalNumber":54,"q":"Songs, videos, and pictures used to support language teaching are examples of:","options":["Print materials only","Audio-visual materials","Improvised materials only","Realia only"],"answer":1},{"id":40,"originalNumber":55,"q":"In a classroom with students at different English proficiency levels, providing a simplified text for some students and the standard text for others within the same lesson reflects:","options":["Differentiated instruction with multiple entry points","Ignoring individual differences","A summative test only","A one-size-fits-all approach assamwork | CTET Mock Test - 2026 | SET - 5 8"],"answer":0},{"id":41,"originalNumber":56,"q":"The idea that spoken language, particularly classroom talk, is not just a communication skill but also an active tool through which learners construct understanding connects most directly to:","options":["Freud's psychosexual theory","Thorndike's Law of Effect","Skinner's operant conditioning","Vygotsky's view of language and thought"],"answer":3},{"id":42,"originalNumber":57,"q":"When a student who stammers is speaking, the teacher should:","options":["Prevent the student from speaking in class","Finish the student's sentences to save time","Give the student ample, unhurried time to speak without interruption","Publicly point out the stammering"],"answer":2},{"id":43,"originalNumber":58,"q":"The stage of the writing process in which a student organises ideas and makes a brief outline before writing begins is called:","options":["Drafting","Editing k","Planning/Pre-writing","Publishing"],"answer":2},{"id":44,"originalNumber":59,"q":"Assessing a student's speaking ability through a structured oral interview, evaluated with a rubric or covering fluency and pronunciation, reflects:","options":["Integrated, rubric-based assessment aligned with communicative teaching","A checklist recording only attendance","Remedial teaching only","A purely written grammar test w"],"answer":0},{"id":45,"originalNumber":60,"q":"The idea that there is a biologically optimal early-childhood period during which language is most easily and naturally acquired is referred to as the:","options":["Affective Filter period","Post-Reading period m","Monitor period","Critical Period Section 3: Mathematics (Q. 61-90) sa"],"answer":3},{"id":46,"originalNumber":61,"q":"If the ratio of boys to girls in a class of 35 students is 4:3, how many boys are there?","options":["15","20","18","12 as"],"answer":1},{"id":47,"originalNumber":62,"q":"The Lowest Common Multiple (LCM) of 4 and 6 is:","options":["12","24","2","10"],"answer":0},{"id":48,"originalNumber":63,"q":"Which of the following Roman numerals represents 40?","options":["XXXX","IL","XL","LX"],"answer":2},{"id":49,"originalNumber":64,"q":"A shape that has the same appearance on both sides of a central dividing line is said to have:","options":["Only curved edges","No pattern","Symmetry","Only right angles assamwork | CTET Mock Test - 2026 | SET - 5 9"],"answer":2},{"id":50,"originalNumber":65,"q":"An angle that measures less than 90° is called a(n):","options":["Acute angle","Obtuse angle","Reflex angle","Straight angle"],"answer":0},{"id":51,"originalNumber":66,"q":"A shape such as a cube, which has length, breadth, and height, is called a:","options":["3D (three-dimensional) shape","1D (one-dimensional) shape","A flat shape only","2D (two-dimensional) shape"],"answer":0},{"id":52,"originalNumber":67,"q":"A basket has 3/5 of its capacity filled with apples. If the basket can hold 40 apples in total, how many apples are currently in the basket?","options":["24","30","16 k","20"],"answer":0},{"id":53,"originalNumber":68,"q":"Estimating the sum of 297 and 405 by rounding each number to the nearest hundred gives an estimated sum of: or","options":["900","600","700","800"],"answer":2},{"id":54,"originalNumber":69,"q":"A pie chart is generally most useful for showing: w","options":["How a whole is divided into proportional parts","Only a single number with no proportion","Only continuous measurements over time","Only three-dimensional shapes m"],"answer":0},{"id":55,"originalNumber":70,"q":"1 kilometre is equal to how many centimetres?","options":["10,000","100,000","1,000,000","1,000 sa"],"answer":1},{"id":56,"originalNumber":71,"q":"A train departs at 11:40 pm and arrives at 2:15 am the next day. The duration of the journey is:","options":["3 hours 25 minutes","2 hours 45 minutes","2 hours 25 minutes","2 hours 35 minutes as"],"answer":3},{"id":57,"originalNumber":72,"q":"What is the product of 23 and 21?","options":["493","463","473","483"],"answer":3},{"id":58,"originalNumber":73,"q":"Divide 324 by 12. The quotient is:","options":["25","26","27","28"],"answer":2},{"id":59,"originalNumber":74,"q":"Which comparison correctly relates the two numbers 4,589 and 4,598?","options":["4,589 is less than 4,598","4,589 is equal to 4,598","The two numbers cannot be compared","4,589 is greater than 4,598 assamwork | CTET Mock Test - 2026 | SET - 5 10"],"answer":0},{"id":60,"originalNumber":75,"q":"The successor (the number that comes immediately after) of 6,999 is:","options":["6,900","7,001","6,998","7,000"],"answer":3},{"id":61,"originalNumber":76,"q":"The nature of mathematics as a HIERARCHICAL and CUMULATIVE subject means that:","options":["Errors in foundational concepts have no lasting effect","Every topic is entirely unrelated to every other topic","Later concepts build systematically on earlier, simpler concepts","Mathematics has no logical structure at all"],"answer":2},{"id":62,"originalNumber":77,"q":"George Pólya's problem-solving model consists of which four steps, in order?","options":["Look Back, Understand, Plan, Execute","Understand the Problem, Devise a Plan, Carry Out the Plan, Look Back","Devise a Plan, Understand, Execute, Look Back","Execute, Understand, Plan, Review k"],"answer":1},{"id":63,"originalNumber":78,"q":"A word problem that closely matches a previously taught example, solvable by directly applying the same procedure, is best classified as a:","options":["Routine problem or","Fair test","Overgeneralisation","Non-routine problem"],"answer":0},{"id":64,"originalNumber":79,"q":"A student correctly explains the concept of perimeter but makes an arithmetic slip while adding the side lengths. This is best classified as a: w","options":["A correct calculation","An assessment tool","Conceptual error","Procedural error m"],"answer":3},{"id":65,"originalNumber":80,"q":"A student believes that a shape with more sides always has a larger area than a shape with fewer sides, regardless of actual dimensions. This belief reflects a:","options":["Correct understanding","Procedural error","Conceptual error sa","Careless error"],"answer":2},{"id":66,"originalNumber":81,"q":"The Concrete-Pictorial-Abstract (CPA) approach recommends introducing a new mathematical concept by moving through which sequence?","options":["Abstract, then Pictorial, then Concrete","Concrete, then Pictorial, then Abstract","Pictorial only, with no other stage as","Abstract only, from the very beginning"],"answer":1},{"id":67,"originalNumber":82,"q":"Locally available materials such as seeds, bottle caps, and matchsticks, used creatively in mathematics teaching, are examples of:","options":["Low-cost, improvised teaching aids","Formal examination tools","Operational definitions","Expensive digital-only aids"],"answer":0},{"id":68,"originalNumber":83,"q":"Mathematics anxiety is best described as:","options":["A teaching aid used in the classroom","A synonym for dyscalculia","A specific neurological learning disability affecting number sense","A learned emotional response of tension/fear that can impair performance independent of actual ability"],"answer":3},{"id":69,"originalNumber":84,"q":"A low-pressure, mistake-tolerant classroom climate is recommended for mathematics teaching mainly because it helps:","options":["Prevent students from ever making errors assamwork | CTET Mock Test - 2026 | SET - 5 11","Increase mathematics anxiety","Reduce mathematics anxiety and build confidence","Eliminate the need for any assessment"],"answer":2},{"id":70,"originalNumber":85,"q":"Allowing a student with dyscalculia to use a multiplication chart during a problem-solving task primarily helps the assessment measure:","options":["Handwriting speed","Higher-level reasoning ability, separate from rote fact recall","Nothing useful","Only memory for multiplication facts"],"answer":1},{"id":71,"originalNumber":86,"q":"An appropriate classroom strategy for a mathematically gifted student who finishes routine work quickly is to provide:","options":["Enrichment through genuinely challenging, non-routine problems","Reduced mathematics instruction","No additional support at all","More of the same routine worksheets k"],"answer":0},{"id":72,"originalNumber":87,"q":"Assessing a student's mathematical understanding by asking them to explain their reasoning, rather than checking only the final answer, is valuable because:","options":["Explanations have no diagnostic value or","Final answers should never be checked","A correct final answer always guarantees genuine understanding","A correct final answer does not always indicate genuine conceptual understanding"],"answer":3},{"id":73,"originalNumber":88,"q":"A Mathematics Laboratory activity in which students measure and compare the circumference and diameter of several circular objects to confirm a known ratio illustrates the laboratory's function of: w","options":["Summative examination","Exploration of an entirely new concept","Verification of an already-known concept","Remedial teaching for careless errors only m"],"answer":2},{"id":74,"originalNumber":89,"q":"Spreading revision of a mathematics concept across several short sessions over two weeks, rather than one long session the night before a test, reflects the benefit of:","options":["Massed practice","Distributed/spaced practice","Zero transfer sa","Negative transfer"],"answer":1},{"id":75,"originalNumber":90,"q":"The primary purpose of using both routine AND non-routine problems in a balanced mathematics curriculum is to build:","options":["Both procedural fluency and flexible, transferable mathematical thinking","Only rote memorisation of formulas","Only speed of calculation as","Only procedural fluency, with no flexible reasoning Section 4: Environmental Studies (Q. 91-120)"],"answer":0},{"id":76,"originalNumber":91,"q":"Oxygen released during photosynthesis is an essential byproduct that is used by living things mainly for:","options":["Digestion","Breathing/respiration","Reproduction","Movement"],"answer":3},{"id":77,"originalNumber":92,"q":"A snake is an example of which class of animals, characterised by dry, scaly skin?","options":["Mammal","Reptile","Bird assamwork | CTET Mock Test - 2026 | SET - 5 12","Amphibian"],"answer":2},{"id":78,"originalNumber":93,"q":"A bird with a long, pointed beak is generally well adapted to:","options":["Filter water only","Tear meat only","Crack open hard seeds only","Catch fish or insects"],"answer":0},{"id":79,"originalNumber":94,"q":"Siberian cranes and several other migratory birds travel long distances to India mainly to escape:","options":["A lack of predators in their home region","The hot summer of their home region","The extremely cold winters of their home region","Overcrowding in their home region"],"answer":0},{"id":80,"originalNumber":95,"q":"Coal is formed over millions of years from the remains of:","options":["Ancient plants buried under the Earth's surface","Ocean water","Volcanic rock only k","Metal ores"],"answer":0},{"id":81,"originalNumber":96,"q":"Sandy soil, clayey soil, and loamy soil are all examples of different types of: or","options":["Soil","Minerals","Fossils","Rocks"],"answer":2},{"id":82,"originalNumber":97,"q":"Which of the following is the highest mountain peak in the world? w","options":["K2","Nanda Devi","Kanchenjunga","Mount Everest m"],"answer":0},{"id":83,"originalNumber":98,"q":"A barometer is an instrument primarily used to measure:","options":["Temperature","Rainfall","Wind speed","Atmospheric pressure sa"],"answer":0},{"id":84,"originalNumber":99,"q":"Whole grains and vegetables are a particularly good source of which component, important for healthy digestion?","options":["Only sugar","Dietary fibre","Only fats","Only water as"],"answer":2},{"id":85,"originalNumber":100,"q":"The sense organ primarily responsible for vision is the:","options":["Eye","Nose","Skin","Ear"],"answer":2},{"id":86,"originalNumber":101,"q":"Mud houses with thick walls are traditionally common in regions with:","options":["Only extremely cold, snowy regions","Only coastal, humid regions","Very heavy, constant rainfall only","Hot, dry climates, since thick mud walls help keep interiors cool"],"answer":1},{"id":87,"originalNumber":102,"q":"Which of the following is an example of a means of transport by air?","options":["Boat","Bicycle","Aeroplane","Bus assamwork | CTET Mock Test - 2026 | SET - 5 13"],"answer":0},{"id":88,"originalNumber":103,"q":"Converting kitchen and garden waste into nutrient-rich material for soil through natural decomposition is called:","options":["Composting","Incineration","Landfilling only","Recycling of plastic"],"answer":3},{"id":89,"originalNumber":104,"q":"Which of the following is a beneficial application of certain microorganisms in medicine?","options":["Some microorganisms are used to produce life-saving antibiotics and vaccines","Microorganisms have no relationship to medicine","Microorganisms can only be studied, never used practically","All microorganisms cause disease with no benefit"],"answer":2},{"id":90,"originalNumber":105,"q":"The organ primarily responsible for digesting food using acids and enzymes is the:","options":["Stomach","Brain","Heart k","Lungs"],"answer":1},{"id":91,"originalNumber":106,"q":"In most parts of India, the season associated with heavy seasonal rainfall, generally from June to September, is called: or","options":["Spring only","Winter","Monsoon","Autumn"],"answer":0},{"id":92,"originalNumber":107,"q":"A large, generally flat elevated area of land, higher than the surrounding region, is called a: w","options":["Plateau","Valley","Delta","Coastal plain m"],"answer":3},{"id":93,"originalNumber":108,"q":"In a food chain, an animal that hunts and feeds on other animals is called a:","options":["Predator","Decomposer","Prey only, never a hunter","Producer sa"],"answer":2},{"id":94,"originalNumber":109,"q":"Fish are well adapted for swimming efficiently mainly due to their:","options":["Ability to breathe air directly","Four walking legs","Streamlined body shape and fins","Thick fur as"],"answer":1},{"id":95,"originalNumber":110,"q":"The process by which seeds are carried away from the parent plant, by wind, water, or animals, to grow in new locations, is called:","options":["Photosynthesis","Germination","Seed dispersal","Pollination"],"answer":0},{"id":96,"originalNumber":111,"q":"Which of the following best reflects a GENUINELY integrated approach to teaching the theme \"Travel\" in EVS?","options":["Teaching only a list of vehicle names, in isolation","Exploring different modes of travel, how travel has changed over time, and how geography affects travel choices, within one connected unit","Teaching only traffic rules with no other connection","Avoiding any discussion of how people travelled in the past"],"answer":1},{"id":97,"originalNumber":112,"q":"NCF envisions EVS and school education broadly as contributing to which overarching goal, beyond narrow subject-specific knowledge?","options":["The all-round, holistic development of the child assamwork | CTET Mock Test - 2026 | SET - 5 14","Only rote memorisation of textbook content","Only physical fitness","Only preparing students for a single annual examination"],"answer":0},{"id":98,"originalNumber":113,"q":"A statement such as \"this insect has bright red and black spots\" is best classified as a(n):","options":["Misconception","Field visit stage","Inference","Observation"],"answer":3},{"id":99,"originalNumber":114,"q":"A statement such as \"this insect's bright colours probably warn predators that it is unsafe to eat\" is best classified as a(n):","options":["A theme","Observation only","Inference","A field visit"],"answer":2},{"id":100,"originalNumber":115,"q":"An effective field visit generally follows which sequence of stages? k","options":["Post-visit follow-up, then pre-visit preparation, then the visit","Pre-visit preparation, then the visit itself, then post-visit follow-up","Only the visit itself, with no other stage needed or","The visit itself, then pre-visit preparation"],"answer":1},{"id":101,"originalNumber":116,"q":"Which of the following best reflects the \"attitude\" dimension of environmental awareness?","options":["Developing a positive, responsible disposition toward environmental protection","Only completing a written test on pollution","Ignoring local environmental issues w","Memorising the definition of biodiversity"],"answer":0},{"id":102,"originalNumber":117,"q":"A teacher assigns a project in which students trace their family's history, including migration patterns and changing occupations across generations. This activity best illustrates: m","options":["A summative test only","A common misconception","A purely laboratory-based Science activity","The Project Method applied to EVS/Social Studies themes"],"answer":3},{"id":103,"originalNumber":118,"q":"A child believes that \"the sun revolves around the Earth,\" based on everyday observation of the sa sun's apparent daily motion. This belief is best described as a:","options":["An inference with no scientific basis to address","Scientifically accurate fact","Common misconception/alternative conception","A field visit stage"],"answer":2},{"id":104,"originalNumber":119,"q":"Durably correcting a misconception generally requires a teacher to: as","options":["Correct it once and never revisit the topic again","Revisit and reinforce the corrected understanding across multiple contexts over time","Avoid ever mentioning the misconception again","Assume one explanation is always sufficient for every student"],"answer":1},{"id":105,"originalNumber":120,"q":"Continuous, formative assessment integrated into ongoing EVS classroom activities, rather than relying only on a single end-of-term test, reflects the principles of:","options":["CCE (Continuous and Comprehensive Evaluation)","A single written examination system","Norm-referenced testing only","Summative assessment only assamwork | CTET Mock Test - 2026 | SET - 5 15"],"answer":0}],MIN=60,PASS="Bikash@420",URL="https://script.google.com/macros/s/AKfycbxtViNBEpH1yW6Bjgg-rDuQP1O94bLjbEC7gAyWE-3D8jdc0ZcatanG7g_WzfsRWPCo/exec";let S=null,T=null,A=null;
+const $=id=>document.getElementById(id),scr=$("screen"),clock=$("clock"),live=$("live"),fx=$("fx");
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function start(){clock.textContent="60:00";live.textContent="0";scr.innerHTML='<section class="card start"><div class="startin"><h1>MOCK TEST</h1><label>Candidate Name</label><input id="name" class="name" maxlength="80" autocomplete="name"><button id="go" class="startbtn" disabled>EXAM START</button></div></section>';let n=$("name"),b=$("go");n.oninput=()=>b.disabled=!n.value.trim();b.onclick=()=>{S={name:n.value.trim(),i:0,a:Array(Q.length).fill(null),c:0,w:0,t:Date.now(),done:false};audio();render();T=setInterval(tick,1000);tick()}}
+function audio(){try{A=A||new(window.AudioContext||window.webkitAudioContext)();if(A.state==="suspended")A.resume()}catch(e){}}
+function tone(f,d,type,t,g){if(!A)return;let o=A.createOscillator(),v=A.createGain();o.type=type;o.frequency.setValueAtTime(f,t);v.gain.setValueAtTime(.0001,t);v.gain.exponentialRampToValueAtTime(g,t+.01);v.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(v);v.connect(A.destination);o.start(t);o.stop(t+d+.02)}
+function ok(){audio();if(!A)return;let t=A.currentTime;tone(660,.16,"sine",t,1);tone(880,.18,"sine",t+.13,1);tone(1320,.24,"sine",t+.27,1)}
+function no(){audio();if(!A)return;let t=A.currentTime;tone(190,.2,"square",t,1);tone(135,.24,"square",t+.16,1);tone(95,.3,"sawtooth",t+.34,1)}
+function boom(good){let col=good?"#00ff66":"#ff1744",c=document.createElement("div");c.style.cssText=`position:absolute;left:50%;top:50%;width:12px;height:12px;border-radius:50%;background:${col};box-shadow:0 0 40px 20px ${good?"rgba(0,255,102,.8)":"rgba(255,23,68,.8)"}`;fx.appendChild(c);for(let i=0;i<100;i++){let p=document.createElement("i"),a=Math.random()*Math.PI*2,d=130+Math.random()*310;p.style.cssText=`position:absolute;left:50%;top:50%;width:${2+Math.random()*3}px;height:${10+Math.random()*25}px;border-radius:50%;background:${col};box-shadow:0 0 12px ${col};transform:translate(-50%,-50%) rotate(${Math.random()*360}deg)`;p.animate([{transform:p.style.transform+" translate(0,0)",opacity:1},{transform:p.style.transform+` translate(${Math.cos(a)*d}px,${Math.sin(a)*d}px)`,opacity:.1}],{duration:900+Math.random()*450,fill:"forwards",easing:"cubic-bezier(.1,.7,.2,1)"});fx.appendChild(p)}setTimeout(()=>{c.remove();fx.querySelectorAll("i").forEach(x=>x.remove())},1550)}
+function tick(){if(!S||S.done)return;let left=Math.max(0,3600-Math.floor((Date.now()-S.t)/1000));clock.textContent=String(Math.floor(left/60)).padStart(2,"0")+":"+String(left%60).padStart(2,"0");if(!left)finish()}
+function render(){let q=Q[S.i];scr.innerHTML=`<section class="card exam"><div class="qh"><div class="qn">Q${q.id}.</div><div class="prog">${q.id} / ${Q.length}</div></div><div class="question">${esc(q.q)}</div><div class="opts" id="opts"></div><button class="next" id="next" disabled>${S.i===Q.length-1?"SUBMIT EXAM":"NEXT"}</button></section>`;q.options.forEach((x,i)=>{let b=document.createElement("button");b.className="opt";b.innerHTML=`<span class="let">${"ABCD"[i]}</span><span>${esc(x)}</span>`;b.onclick=()=>answer(i);$("opts").appendChild(b)})}
+function answer(i){if(S.a[S.i]!==null)return;let q=Q[S.i];S.a[S.i]=i;if(i===q.answer){S.c++;ok();boom(true)}else{S.w++;no();boom(false)}live.textContent=S.c;document.querySelectorAll(".opt").forEach((b,j)=>{b.disabled=true;if(j===q.answer)b.classList.add("good");if(j===i&&i!==q.answer)b.classList.add("bad");if(j===i)b.classList.add("sel")});$("next").disabled=false}
+document.addEventListener("click",e=>{if(e.target.id==="next"&&S.a[S.i]!==null){if(S.i===Q.length-1)finish();else{S.i++;render()}}});
+const fmt=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
+async function finish(){if(!S||S.done)return;S.done=true;clearInterval(T);let used=Math.min(3600,Math.floor((Date.now()-S.t)/1000)),att=S.a.filter(x=>x!==null).length,r={candidateName:S.name,totalQuestions:Q.length,attempted:att,correct:S.c,incorrect:S.w,unanswered:Q.length-att,score:S.c,percentage:Number((S.c/Q.length*100).toFixed(2)),timeUsed:fmt(used),completedDateTime:new Date().toISOString(),answers:S.a};let a=JSON.parse(localStorage.getItem("ctet_mock_results")||"[]");a.unshift(r);localStorage.setItem("ctet_mock_results",JSON.stringify(a));if(URL)try{await fetch(URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(r)})}catch(e){}result(r)}
+function result(r){scr.innerHTML=`<section class="card result"><div class="title">FINAL RESULT</div><div class="stats">${[['Candidate Name',r.candidateName],['Total Questions',r.totalQuestions],['Attempted',r.attempted],['Correct',r.correct],['Incorrect',r.incorrect],['Unanswered',r.unanswered],['Score',r.score],['Percentage',r.percentage+"%"],['Time Used',r.timeUsed]].map(x=>`<div class="stat"><span>${x[0]}</span><b>${esc(x[1])}</b></div>`).join("")}</div><div class="actions"><button class="act" id="review">ANSWER REVIEW</button><button class="act" id="new">NEW TEST</button></div><div id="rv"></div></section>`;$("review").onclick=()=>review(r);$("new").onclick=start}
+function review(r){$("rv").innerHTML='<div class="review">'+Q.map((q,i)=>{let a=r.answers[i],s=a===null?"Unanswered":a===q.answer?"Correct":"Wrong";return `<div class="ri"><div class="rq">Q${q.id}. ${esc(q.q)}</div><div class="ans">Candidate's Answer: ${a===null?"—":esc(q.options[a])}<br>Correct Answer: ${esc(q.options[q.answer])}<br><strong class="${s==="Correct"?"goodtxt":s==="Wrong"?"badtxt":""}">${s}</strong></div></div>`}).join("")+'</div>'}
+function arr(){return JSON.parse(localStorage.getItem("ctet_mock_results")||"[]")}
+admin.onclick=()=>{modal.classList.add("show");login.style.display="block";dash.style.display="none";pw.value=""};close.onclick=()=>modal.classList.remove("show");loginBtn.onclick=()=>{if(pw.value===PASS){login.style.display="none";dash.style.display="block";load()}else alert("Incorrect password.")};logout.onclick=()=>modal.classList.remove("show");refresh.onclick=load;clear.onclick=()=>{if(confirm("Are you sure you want to delete all candidate results?")){localStorage.removeItem("ctet_mock_results");load()}};print.onclick=()=>window.print();
+function load(){let a=arr();rows.innerHTML=a.length?a.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.candidateName)}</td><td>${r.score}</td><td>${r.percentage}%</td><td>${r.correct}</td><td>${r.incorrect}</td><td>${r.attempted}</td><td>${r.unanswered}</td><td>${esc(r.timeUsed)}</td><td>${new Date(r.completedDateTime).toLocaleString()}</td></tr>`).join(""):'<tr><td colspan="10" style="text-align:center">No saved results.</td></tr>'}
+csv.onclick=()=>{let a=arr(),rows2=[["Rank","Candidate Name","Score","Time used","Percentage","Completed Date/Time"],...a.map((r,i)=>[i+1,r.candidateName,r.score,r.timeUsed,r.percentage+"%",new Date(r.completedDateTime).toLocaleString()])],c="\uFEFF"+rows2.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\r\n"),b=new Blob([c],{type:"text/csv;charset=utf-8"}),x=document.createElement("a");x.href=URL.createObjectURL(b);x.download="CTET_Mock_Test_Results.csv";x.click();URL.revokeObjectURL(x.href)};
+theme.onclick=()=>{document.body.classList.toggle("light");theme.textContent=document.body.classList.contains("light")?"☀":"☾"};start();
+</script></body></html>
