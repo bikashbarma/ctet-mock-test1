@@ -200,46 +200,28 @@ function saveResults(a){localStorage.setItem(RESULTS_KEY,JSON.stringify(a))}
 
 function submitToCentralScoreboard(r){
   const status=$("centralStatus");
+
+  // IMPORTANT:
+  // The central Apps Script expects ONLY these four result fields.
+  // The Sheet itself creates Rank and Date, giving:
+  // Rank | Candidate Name | Score | Time Used | Percentage | DATE
   const payload={
-    token:CENTRAL_API_TOKEN,
-    testId:TEST_ID,
     candidateName:String(r.candidate||"").trim(),
-    candidate:String(r.candidate||"").trim(),
     score:Number(r.score)||0,
-    percentage:Number(r.percentage)||0,
     timeUsed:Number(r.timeUsed)||0,
-    correct:Number(r.correct)||0,
-    incorrect:Number(r.incorrect)||0,
-    attempted:Number(r.attempted)||0,
-    unanswered:Number(r.unanswered)||0,
-    submissionId:String(r.id||""),
-    date:r.completedAt
+    percentage:Number(r.percentage)||0
   };
+
   const body=JSON.stringify(payload);
+
   if(status){
-    status.textContent="CENTRAL SCOREBOARD: SENDING RESULT…";
-    status.style.color="var(--green)";
+    status.textContent="CENTRAL SCOREBOARD: SUBMITTING…";
+    status.style.color="var(--gold)";
   }
 
-  let sent=false;
-  try{
-    if(navigator.sendBeacon){
-      sent=navigator.sendBeacon(
-        CENTRAL_SCOREBOARD_URL,
-        new Blob([body],{type:"text/plain;charset=UTF-8"})
-      );
-    }
-  }catch(e){ sent=false; }
-
-  if(sent){
-    if(status){
-      status.textContent="CENTRAL SCOREBOARD: SUBMISSION QUEUED";
-      status.style.color="var(--green)";
-    }
-    return Promise.resolve();
-  }
-
-  return fetch(CENTRAL_SCOREBOARD_URL,{
+  // First try a normal POST. text/plain avoids a CORS preflight and
+  // Apps Script can read the JSON from e.postData.contents.
+  fetch(CENTRAL_SCOREBOARD_URL,{
     method:"POST",
     mode:"no-cors",
     redirect:"follow",
@@ -249,13 +231,27 @@ function submitToCentralScoreboard(r){
     keepalive:true
   }).then(()=>{
     if(status){
-      status.textContent="CENTRAL SCOREBOARD: SUBMISSION SENT";
+      status.textContent="CENTRAL SCOREBOARD: SUBMISSION SENT ✓";
       status.style.color="var(--green)";
     }
   }).catch(()=>{
-    if(status){
-      status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
-      status.style.color="var(--red)";
+    // If the browser blocks/loses fetch, use Beacon as the fallback.
+    try{
+      const queued=navigator.sendBeacon(
+        CENTRAL_SCOREBOARD_URL,
+        new Blob([body],{type:"text/plain;charset=UTF-8"})
+      );
+      if(status){
+        status.textContent=queued
+          ?"CENTRAL SCOREBOARD: SUBMISSION QUEUED FOR RETRY"
+          :"CENTRAL SCOREBOARD: CONNECTION FAILED";
+        status.style.color=queued?"var(--gold)":"var(--red)";
+      }
+    }catch(e){
+      if(status){
+        status.textContent="CENTRAL SCOREBOARD: CONNECTION FAILED";
+        status.style.color="var(--red)";
+      }
     }
   });
 }
@@ -413,7 +409,7 @@ function showResult(r){
       <div class="stat"><small>Percentage</small><strong>${r.percentage.toFixed(2)}%</strong></div>
       <div class="stat"><small>Time Used</small><strong>${formatTime(r.timeUsed)}</strong></div>
     </div>
-    <div id="centralStatus" class="status">CENTRAL SCOREBOARD: SENDING RESULT…</div>
+    <div id="centralStatus" class="status">CENTRAL SCOREBOARD: READY TO SUBMIT</div>
     <div class="resultActions">
       <button onclick="window.print()">PRINT / SAVE PDF</button>
       <button onclick="location.reload()">BACK TO START</button>
